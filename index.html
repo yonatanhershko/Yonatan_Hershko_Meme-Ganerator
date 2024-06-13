@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Page</title>
+</head>
+
+<body onload="onInit()">
+
+    <header>
+    </header>
+
+    <main>
+
+
+
+        </div>
+
+        <section>
+            gallery
+        </section>
+
+
+        <section>
+
+            <div class="canvas-container">
+                <h3>Meme Container</h3>
+                <canvas id="myCanvas" width="400" height="400" style="border: 1px solid black"></canvas>
+                <div onclick="event.stopPropagation()" class="meme-text-container">
+                    <input oninput="onTextChange(event)" class="meme-text-input" type="text"
+                        placeholder="Enter your text here" />
+                </div>
+                <label for="text-color">Set Text Color: </label>
+                <input type="color" id="text-color" name="textColor" form="frmRegister" value="#ff0000"
+                    onchange="textColor(event)" />
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="./js/service/util-service.js"></script>
+    <script src="./js/service/meme-service.js"></script>
+    <script src="./js/service/canvas-service.js"></script>
+    <script src="./js/controllers/meme-controller.js"></script>
+    <script src="./js/controllers/canvas-controller.js"></script>
+    <script src="./js/controllers/main-controller.js"></script>
+
+</body>
+
+</html>
