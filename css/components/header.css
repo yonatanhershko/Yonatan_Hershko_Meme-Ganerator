@@ -1,0 +1,15 @@
+
+.header-conatainer{
+    height: 10px;
+    background-color: var(--header-bg-clr);
+    color: brown;
+}
+
+
+.logo{
+
+}
+
+.main-header-area{
+gap: 1em;
+}
