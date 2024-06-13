@@ -1,0 +1,23 @@
+
+
+
+.editor-container{
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+.options{
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 400px;
+    width: 400px;
+    /* self note ->change bgcolor and sizing*/
+    background-color: rgba(4, 8, 4, 0.33);
+    border-radius: 25px;
+}
+
+
+.text-edit-container img {
+    width: 15px;
+  }

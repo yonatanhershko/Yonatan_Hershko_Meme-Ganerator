@@ -1,0 +1,27 @@
+
+
+.footer-container{
+    /* position: fixed;
+    left: 0;
+    bottom: 0; */
+    width: 100%;
+    margin-block-start: 0.625em;
+    /* padding: 0.15em; */
+    background: var(--header-bg-clr);
+  
+}
+
+.footer-container p {
+    margin-inline-start: 0.625em;
+}
+
+.footer-btn{
+    display: flex;
+    padding: 0.4em;
+    margin-inline-end: 1rem;
+
+}
+
+.footer-btn img{
+    width: 38px;
+}

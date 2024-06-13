@@ -6,11 +6,14 @@
     font-family: Lato-Regular, serif;
   }
   
+
+  /* for my self-> change the bgc clr and the text clr */
   body {
+    color: aliceblue;
     margin: 0;
     padding: 0;
     font-size: 1;
-  }
+    background-color: #252525;  }
   
   h1,
   h2,

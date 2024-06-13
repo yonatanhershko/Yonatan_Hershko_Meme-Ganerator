@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Page</title>
+
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -21,7 +22,7 @@
 
     <main>
         <section>
-
+            <!-- search area -->
         </section>
 
 
@@ -31,23 +32,57 @@
             </div>
         </section>
 
-        <section class="canvas-container hidden">
+        <section class="editor-container hidden flex align-center ">
+            <div class="options flex">
+                <input oninput="onTextType()" class="meme-text-input" type="text" placeholder="Enter your text here" />
+                <!-- add switch remove -->
+                <div>
+                    <button>+</button>
+                    <button>-</button>
+                    <button>switch</button>
+                </div>
 
+                <!-- all small dit -->
+                <div class=" flex">
+                    <label for="text-color">Set Text Color: </label>
+                    <input type="color" id="text-color" name="textColor" value="#ff0000" onchange="textColor(event)" />
+                    <!-- <div onclick="event.stopPropagation()" class="text-edit-container">
+                    <img onclick="increaseFontSize()" class=" pointer "
+                        src="" /> -->
+
+                    <button onclick="increaseFontSize()">Increase Font Size</button>
+                    <button onclick="decreaseFontSize()">Decrease Font Size</button>
+                </div class=" flex">
+
+                <!-- emojy -->
+                <div class=" flex">
+
+                </div>
+
+                <!-- d n s -->
+                <div class=" flex">
+                    <button class="footer-btn"><a href="#" onclick="downloadCanvas(this)" download>Download</a></button>
+                </div>
+
+            </div>
             <canvas id="myCanvas" width="400" height="400"></canvas>
-
-            <input oninput="onTextType()" class="meme-text-input" type="text" placeholder="Enter your text here" />
-
-            <label for="text-color">Set Text Color: </label>
-            <input type="color" id="text-color" name="textColor" value="#ff0000" onchange="textColor(event)" />
-            <button onclick="increaseFontSize()">Increase </button>
-            <button onclick="decreaseFontSize()">Decrease</button>
-
-            <button class="footer-btn "><a href="#" onclick="downloadCanvas(this)" download>Download</a></button>
         </section>
 
     </main>
-    <footer>
+    <footer class="footer-container flex space-between align-center">
+        <p> © 2014 Created by Yonatan Hershko </p>
 
+        <div class="links-container flex">
+
+            <a class="footer-btn" href="https://github.com/yonatanhershko/Yonatan_Hershko_Meme-Ganerator"
+                target="_blank"><img src="./icons/square-github.svg" />
+            </a>
+            <a class="footer-btn" href="https://www.linkedin.com/in/yonatan-hershko-022718255/" target="_blank"><img
+                    src="./icons/linkedin.svg" /></a>
+            <a class="footer-btn" href="https://www.instagram.com/yonatan_hershko/" target="_blank"><img
+                    src="./icons/instagram.svg" /></a>
+
+        </div>
     </footer>
     <script src="./js/service/util-service.js"></script>
     <script src="./js/service/meme-service.js"></script>
