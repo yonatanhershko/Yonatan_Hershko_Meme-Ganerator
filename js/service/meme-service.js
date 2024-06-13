@@ -41,3 +41,16 @@ function getMeme() {
   function getImageById(id) {
     return gImgs.find(img => img.id === id)
 }
+
+// function addLine() {
+//     var newLine = {
+//         txt: 'Pizza',
+//         size: 20,
+//         color: 'red',
+      
+//     }
+   
+//     gMeme.lines.push(newLine)
+
+//     renderMeme()
+// }

@@ -14,54 +14,60 @@
     <header class="header-container flex space-between align-center">
         <div class="logo">MemeIt😄</div>
         <div class="main-header-area flex ">
-            <a>Gallery</a>
+            <a class="pointer" onclick="switchView()">Gallery</a>
             <a>Save Meme</a>
             <a>About</a>
         </div>
     </header>
 
     <main>
-        <section>
-            <!-- search area -->
+        <section class="flex top-gallery-search space-between align-center">
+            <div> <input oninput="" class="meme-search" type="text" placeholder="Search Here" /></div>
+            <div class="search-keywords-container"> words,words</div>
+            <div class="get-random-meme"> Im Flexible</div>
+
         </section>
 
 
 
         <section>
-            <div class="gallery-container flex">
+            <div class="gallery-container flex ">
             </div>
         </section>
 
         <section class="editor-container hidden flex align-center ">
             <div class="options flex">
                 <input oninput="onTextType()" class="meme-text-input" type="text" placeholder="Enter your text here" />
+
                 <!-- add switch remove -->
                 <div>
-                    <button>+</button>
+                    <button onclick="onAddLine()">+</button>
                     <button>-</button>
-                    <button>switch</button>
+                    <button onclick="switchLine()">switch</button>
                 </div>
 
                 <!-- all small dit -->
-                <div class=" flex">
+                <div class=" flex  space-between ">
                     <label for="text-color">Set Text Color: </label>
                     <input type="color" id="text-color" name="textColor" value="#ff0000" onchange="textColor(event)" />
                     <!-- <div onclick="event.stopPropagation()" class="text-edit-container">
-                    <img onclick="increaseFontSize()" class=" pointer "
+                    <img onclick="onIncreaseFont()" class=" pointer "
                         src="" /> -->
 
-                    <button onclick="increaseFontSize()">Increase Font Size</button>
-                    <button onclick="decreaseFontSize()">Decrease Font Size</button>
-                </div class=" flex">
+                    <button onclick="onIncreaseFont()">Increase </button>
+                    <button onclick="onDecreaseFont()">Decrease</button>
+                </div class=" flex  space-between ">
 
                 <!-- emojy -->
-                <div class=" flex">
+                <div class=" flex  space-between ">
 
                 </div>
 
                 <!-- d n s -->
-                <div class=" flex">
+                <div class=" flex  space-between ">
                     <button class="footer-btn"><a href="#" onclick="downloadCanvas(this)" download>Download</a></button>
+                    <button class="footer-btn"><a href="#" >Save</a></button>
+                    <button class="footer-btn"><a href="#" >Facebook</a></button>
                 </div>
 
             </div>
@@ -70,7 +76,7 @@
 
     </main>
     <footer class="footer-container flex space-between align-center">
-        <p> © 2014 Created by Yonatan Hershko </p>
+        <p> © 2024 Created by Yonatan Hershko </p>
 
         <div class="links-container flex">
 

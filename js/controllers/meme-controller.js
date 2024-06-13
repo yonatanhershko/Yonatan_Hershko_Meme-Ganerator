@@ -16,10 +16,12 @@ function renderMeme() {
         gCtx.fillStyle = line.color
         gCtx.textAlign = 'center'
         gCtx.textBaseline = 'top'
-        gCtx.fillText(line.txt, gElCanvas.width / 2, 10); // Adjust the y-coordinate to 10// 350 -> down //1 ->up
-    
+        gCtx.fillText(line.txt, gElCanvas.width / 2, 10) // Adjust the y-coordinate to 10// 350 -> down //1 ->up
+
+     
     }
 }
+
 
 //text change
 function onTextType() {
@@ -48,16 +50,50 @@ function onImgSelect(elImg) {
 }
 
 
-function increaseFontSize() {
+function onIncreaseFont() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
     line.size += 5
     renderMeme()
 }
 
-function decreaseFontSize() {
-    const line = gMeme.lines[gMeme.selectedLineIdx];
-    if (line.size > 5) { 
+function onDecreaseFont() {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    if (line.size > 5) {
         line.size -= 5
         renderMeme()
     }
 }
+
+function setLineTxt(text) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = text
+}
+
+function updateTextInput() {
+    const inputField = document.querySelector('.meme-text-input')
+    inputField.value = gMeme.lines[gMeme.selectedLineIdx].txt
+}
+
+
+
+// function drawFrameAroundText(line, y) {
+//     const textWidth = gCtx.measureText(line.txt).width;
+//     const textHeight = line.size;
+//     gCtx.strokeStyle = 'black';
+//     gCtx.lineWidth = 2;
+//     gCtx.strokeRect(gElCanvas.width / 2 - textWidth / 2 - 5, y - 5, textWidth + 10, textHeight + 10);
+// }
+
+
+// function onAddLine(){
+//     addLine()
+//     renderMeme()
+// }
+
+
+
+// function switchLine() {
+//     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
+//     document.querySelector('.meme-text-input').value = gMeme.lines[gMeme.selectedLineIdx].txt
+//     renderMeme()
+// }
+
