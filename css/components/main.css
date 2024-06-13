@@ -2,13 +2,14 @@
 
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
    
 }
 
 .gallery-container img {
-    width: calc(25% - 10px); 
+    width: 16em; 
     height: auto;
-    object-fit: cover;
+    /* object-fit: cover; */
     border-radius: 5px;
     transition: transform 0.3s, box-shadow 0.3s;
 }

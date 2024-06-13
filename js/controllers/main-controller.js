@@ -10,7 +10,6 @@ function onInit() {
 }
 
 
-
 function switchView() {
     const galleryContainer = document.querySelector('.gallery-container')
     const canvasContainer = document.querySelector('.canvas-container')
