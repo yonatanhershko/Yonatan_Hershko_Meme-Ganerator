@@ -23,8 +23,8 @@ function renderMeme() {
 
 
 function onTextType() {
- const topText = document.querySelector('.meme-text-input').value
- setLineTxt(topText)
+    const topText = document.querySelector('.meme-text-input').value
+    setLineTxt(topText)
     renderMeme()
 }
 
@@ -41,6 +41,7 @@ function textColor(event) {
 function onImgSelect(elImg) {
     const selectedImgId = +elImg.dataset.imgId
     gMeme.selectedImgId = selectedImgId
+    switchView()
     renderMeme()
 }
 

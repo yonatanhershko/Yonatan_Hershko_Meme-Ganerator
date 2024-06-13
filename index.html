@@ -20,28 +20,20 @@
     </header>
 
     <main>
-
-
         </div>
-
         <section>
-            <div class="gallery-container">
-
+            <div class="gallery-container flex">
             </div>
         </section>
 
-
-        <section class="">
-
-            <div class="canvas-container">
+        <section class="canvas-container hidden" >
 
                 <canvas id="myCanvas" width="400" height="400" style="border: 1px solid black"></canvas>
-
 
                 <input oninput="onTextType()" class="meme-text-input" type="text" placeholder="Enter your text here"  />
 
                 <label for="text-color">Set Text Color: </label>
-                <input type="color" id="text-color" name="textColor" form="frmRegister" value="#ff0000"
+                <input type="color" id="text-color" name="textColor"  value="#ff0000"
                     onchange="textColor(event)" />
                     <button class="footer-btn "><a href="#" onclick="downloadCanvas(this)"
                         download>Download</a></button>

@@ -1,0 +1,20 @@
+.gallery-container {
+
+    flex-wrap: wrap;
+    gap: 10px;
+   
+}
+
+.gallery-container img {
+    width: calc(25% - 10px); 
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
