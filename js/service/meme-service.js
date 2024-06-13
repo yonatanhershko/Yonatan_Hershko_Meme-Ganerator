@@ -35,5 +35,9 @@ var gMeme = {
 var gKeywordSearchCountMap = { funny: 12, animal: 16, baby: 2 }
 
 function getMeme() {
-    return gImgs
+    return gMeme
   }
+
+  function getImageById(id) {
+    return gImgs.find(img => img.id === id)
+}

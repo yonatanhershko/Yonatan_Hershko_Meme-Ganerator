@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Page</title>
-    <link rel="stylesheet" href="./css/styles.css" >
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body onload="onInit()">
@@ -13,9 +13,9 @@
     <header class="header-container flex space-between">
         <div class="logo">MemeIt😄</div>
         <div class="main-header-area flex ">
-            <a >Gallery</a>
-            <a >Save Meme</a>
-            <a >About</a>
+            <a>Gallery</a>
+            <a>Save Meme</a>
+            <a>About</a>
         </div>
     </header>
 
@@ -25,19 +25,21 @@
         </div>
 
         <section>
-            gallery
+            <div class="gallery-container">
+
+            </div>
         </section>
 
 
-        <section  >
+        <section class="">
 
             <div class="canvas-container">
-         
+
                 <canvas id="myCanvas" width="400" height="400" style="border: 1px solid black"></canvas>
-                <div onclick="event.stopPropagation()" class="meme-text-container">
-                    <input oninput="onTextChange(event)" class="meme-text-input" type="text"
-                        placeholder="Enter your text here" />
-                </div>
+
+
+                <input oninput="onTextType()" class="meme-text-input" type="text" placeholder="Enter your text here"  />
+
                 <label for="text-color">Set Text Color: </label>
                 <input type="color" id="text-color" name="textColor" form="frmRegister" value="#ff0000"
                     onchange="textColor(event)" />
@@ -49,14 +51,12 @@
     <footer>
 
     </footer>
-
     <script src="./js/service/util-service.js"></script>
-    <script src="./js/service/main-service.js"></script>
     <script src="./js/service/meme-service.js"></script>
-    <script src="./js/service/canvas-service.js"></script>
     <script src="./js/controllers/meme-controller.js"></script>
     <script src="./js/controllers/canvas-controller.js"></script>
     <script src="./js/controllers/main-controller.js"></script>
+    <script src="./js/controllers/galleryController.js"></script>
 
 </body>
 

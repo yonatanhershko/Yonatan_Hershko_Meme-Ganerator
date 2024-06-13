@@ -1,35 +1,46 @@
 'use strict'
 
-
 function renderMeme() {
-
     const meme = getMeme()
-    const imgId = meme.selectedImgId
-
-    const currRenderImg = gImgs.find(img => img.id = imgId)
-    if (!currRenderImg) return
-
-    const imgUrl = currRenderImg.url
-    var img = new Image()
-    img.src = imgUrl
-
-    img.onload = function () {
-        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-
-       //all text stuff
-        gCtx.font = '32px Arial'
-        gCtx.fillStyle = gTextColor
-        gCtx.lineWidth = 1
-        gCtx.textAlign = 'center'
-        gCtx.textBaseline = 'top'
-        gCtx.fillText(gText, gElCanvas.width / 2, 10)
-        gCtx.strokeText(gText, gElCanvas.width / 2, 10)
+    const img = getImageById(meme.selectedImgId)
+    if (!img) {
+        console.error('Image not found!')
+        return
     }
 
-  
+    const elImg = new Image()
+    elImg.src = img.url
+    elImg.onload = () => {
+        gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+        gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+
+        const line = meme.lines[meme.selectedLineIdx]
+        gCtx.font = `${line.size}px Arial`
+        gCtx.fillStyle = line.color
+        gCtx.fillText(line.txt, 50, 50)
+    }
 }
 
-function updateMemeText(text) {
 
-    gMeme.lines[gMeme.selectedLineIdx].txt = text
+function onTextType() {
+ const topText = document.querySelector('.meme-text-input').value
+ setLineTxt(topText)
+    renderMeme()
 }
+
+function setLineTxt(text) {
+    gMeme.lines[0].txt = text
+}
+
+function textColor(event) {
+    const color = event.target.value
+    gMeme.lines[gMeme.selectedLineIdx].color = color
+    renderMeme()
+}
+
+function onImgSelect(elImg) {
+    const selectedImgId = +elImg.dataset.imgId
+    gMeme.selectedImgId = selectedImgId
+    renderMeme()
+}
+
