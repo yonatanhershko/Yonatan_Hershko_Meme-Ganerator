@@ -1,10 +1,4 @@
 :root {
-
-    --header-bg-clr: linear-gradient(to right,
-            #0f9bb3,
-            #00a5af,
-            #00ada2,
-            #00b48e,
-            #2fba74);
-
+    --header-bg-clr:
+     linear-gradient(to right, #2754bf, #1E90FF, #00BFFF, #87CEFA, #B0E0E6);
 }

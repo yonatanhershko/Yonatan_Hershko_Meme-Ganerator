@@ -1,8 +1,11 @@
 
-.header-conatainer{
-    height: 10px;
-    background-color: var(--header-bg-clr);
-    color: brown;
+.header-container{
+background:var(--header-bg-clr);
+padding-bottom: 10px;
+-webkit-box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.75);
+box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.75);
+
 }
 
 
