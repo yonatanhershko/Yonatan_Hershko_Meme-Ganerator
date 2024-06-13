@@ -29,10 +29,10 @@
         </section>
 
 
-        <section>
+        <section  >
 
             <div class="canvas-container">
-                <h3>Meme Container</h3>
+         
                 <canvas id="myCanvas" width="400" height="400" style="border: 1px solid black"></canvas>
                 <div onclick="event.stopPropagation()" class="meme-text-container">
                     <input oninput="onTextChange(event)" class="meme-text-input" type="text"
@@ -41,6 +41,8 @@
                 <label for="text-color">Set Text Color: </label>
                 <input type="color" id="text-color" name="textColor" form="frmRegister" value="#ff0000"
                     onchange="textColor(event)" />
+                    <button class="footer-btn "><a href="#" onclick="downloadCanvas(this)"
+                        download>Download</a></button>
         </section>
 
     </main>
@@ -49,6 +51,7 @@
     </footer>
 
     <script src="./js/service/util-service.js"></script>
+    <script src="./js/service/main-service.js"></script>
     <script src="./js/service/meme-service.js"></script>
     <script src="./js/service/canvas-service.js"></script>
     <script src="./js/controllers/meme-controller.js"></script>

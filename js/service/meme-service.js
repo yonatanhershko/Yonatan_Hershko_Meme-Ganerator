@@ -22,8 +22,8 @@ var gImgs = [
 
 ]
 var gMeme = {
-    selectedImgId: 5,
-    selectedLineIdx: 0,
+    selectedImgId: 1,/// change img num
+    selectedLineIdx: 0,/// change lineidx
     lines: [
         {
             txt: 'I sometimes eat Falafel',
@@ -33,3 +33,7 @@ var gMeme = {
     ],
 }
 var gKeywordSearchCountMap = { funny: 12, animal: 16, baby: 2 }
+
+function getMeme() {
+    return gImgs
+  }
