@@ -31,6 +31,7 @@ var gMeme = {
             font: 'Impact, Haettenschweiler, Arial Narrow Bold, sans-serif',
             color: '#252525',
             x: 200,
+            strokeWidth: 3,
             y: 50
         },
     ],
@@ -52,6 +53,7 @@ function addLine() {
         font: 'Impact, Haettenschweiler, Arial Narrow Bold, sans-serif',
         color: '#252525',
         x: 200,
+        strokeWidth: 3,
         y: calculateNewLineY(), 
     };
     gMeme.lines.push(newLine);
@@ -120,7 +122,6 @@ function openColorPicker() {
     colorPicker.click() // Simulate a click on the color input
 }
 
-
 function updatePaletteIconColor(color) {
     const paletteIcon = document.querySelector('.fa-palette')
     paletteIcon.style.color = color
@@ -129,23 +130,16 @@ function updatePaletteIconColor(color) {
 function alignLeftText() {
     const selectedLineIdx = gMeme.selectedLineIdx
     if (selectedLineIdx === -1) return
-    console.log('hhh')
     const selectedLine = gMeme.lines[selectedLineIdx]
-
     selectedLine.x = gElCanvas.width * 0.36
-
     renderMeme()
 }
-
 
 function alignCenterText(){
     const selectedLineIdx = gMeme.selectedLineIdx
     if (selectedLineIdx === -1) return
-    console.log('hhh')
     const selectedLine = gMeme.lines[selectedLineIdx]
-
     selectedLine.x = gElCanvas.width * 0.50
-
     renderMeme()
 }
 
@@ -153,10 +147,25 @@ function alignRightText(){
 
     const selectedLineIdx = gMeme.selectedLineIdx
     if (selectedLineIdx === -1) return
-    console.log('hhh')
     const selectedLine = gMeme.lines[selectedLineIdx]
 
     selectedLine.x = gElCanvas.width * 0.60
 
+    renderMeme()
+}
+
+function addStroke(){
+    const selectedLineIdx = gMeme.selectedLineIdx
+    if (selectedLineIdx === -1) return
+    const selectedLine = gMeme.lines[selectedLineIdx]
+
+    // Toggle stroke on/off
+    if (selectedLine.strokeWidth > 0) {
+        selectedLine.strokeColor = ''
+        selectedLine.strokeWidth = 0 
+    } else {
+        selectedLine.strokeColor = 'white'
+        selectedLine.strokeWidth = 3
+    }
     renderMeme()
 }
