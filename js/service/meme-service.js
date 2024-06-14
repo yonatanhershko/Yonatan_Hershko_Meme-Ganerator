@@ -128,12 +128,35 @@ function updatePaletteIconColor(color) {
 
 function alignLeftText() {
     const selectedLineIdx = gMeme.selectedLineIdx
-    // console.log('great ')
     if (selectedLineIdx === -1) return
     console.log('hhh')
     const selectedLine = gMeme.lines[selectedLineIdx]
 
-    selectedLine.x = gElCanvas.width * 0.25
+    selectedLine.x = gElCanvas.width * 0.36
+
+    renderMeme()
+}
+
+
+function alignCenterText(){
+    const selectedLineIdx = gMeme.selectedLineIdx
+    if (selectedLineIdx === -1) return
+    console.log('hhh')
+    const selectedLine = gMeme.lines[selectedLineIdx]
+
+    selectedLine.x = gElCanvas.width * 0.50
+
+    renderMeme()
+}
+
+function alignRightText(){
+
+    const selectedLineIdx = gMeme.selectedLineIdx
+    if (selectedLineIdx === -1) return
+    console.log('hhh')
+    const selectedLine = gMeme.lines[selectedLineIdx]
+
+    selectedLine.x = gElCanvas.width * 0.60
 
     renderMeme()
 }

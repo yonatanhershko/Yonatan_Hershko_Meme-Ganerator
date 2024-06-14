@@ -49,7 +49,7 @@ function setLineTxt(text) {
     gMeme.lines[gMeme.selectedLineIdx].txt = text
 }
 
-///clr
+///Text Color
 function textColor(event) {
     const newColor = event.target.value
     const meme = getMeme()
@@ -61,7 +61,7 @@ function textColor(event) {
     }
 }
 
-//img select
+//Img Select
 function onImgSelect(elImg) {
     const selectedImgId = +elImg.dataset.imgId
     gMeme.selectedImgId = selectedImgId
@@ -69,6 +69,7 @@ function onImgSelect(elImg) {
     renderMeme()
 }
 
+//Change Funt Size
 function onIncreaseFont() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
     line.size += 5
@@ -82,6 +83,7 @@ function onDecreaseFont() {
         renderMeme()
     }
 }
+
 
 
 function onAddLine() {
@@ -143,8 +145,19 @@ function onSetFont(font) {
 }
 
 
+
+//Align Text
 function onAlignLeftText() {
     alignLeftText()
     renderMeme()
 }
 
+function onAlignCenterText() {
+    alignCenterText()
+    renderMeme()
+}
+
+function onAlignRightText(){
+    alignRightText()
+    renderMeme()
+}
