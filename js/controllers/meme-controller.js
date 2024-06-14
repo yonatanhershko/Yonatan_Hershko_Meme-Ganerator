@@ -12,7 +12,7 @@ function renderMeme() {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 
         meme.lines.forEach((line, idx) => {
-            gCtx.font = `${line.size}px Arial`
+            gCtx.font = `${line.size}px Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif`
             gCtx.fillStyle = line.color
             gCtx.textAlign = 'center'
             gCtx.textBaseline = 'top'
@@ -34,7 +34,7 @@ function renderMeme() {
             gCtx.fillText(line.txt, line.x, line.y)
 
             if (idx === meme.selectedLineIdx) {
-                gCtx.strokeStyle = 'black'
+                gCtx.strokeStyle = 'white'
                 gCtx.lineWidth = 2
                 gCtx.strokeRect(line.x - line.width / 2 - 5, line.y - 5, line.width + 10, line.height + 10)
             }
@@ -113,14 +113,14 @@ function onMouseClick(ev) {
         meme.selectedLineIdx = clickedLineIdx
         updateTextInput()
         renderMeme()
-        console.log('Selected line index:', clickedLineIdx)
+        addMouseListeners()
+        console.log('you got it');
     } else {
-        console.log('Clicked outside of any text line')
+        removeMouseListeners()
     }
 }
 
-function onDeleteLine(){
-
+function onDeleteLine() {
     deleteLine()
     updateTextInput()
     renderMeme()

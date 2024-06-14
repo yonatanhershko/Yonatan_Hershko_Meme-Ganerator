@@ -1,0 +1,27 @@
+
+
+/* MOBILE */
+@media (max-width: 740px){
+    .gallery-container img {
+        width: 10em; 
+        height: auto;
+        /* object-fit: cover; */
+        border-radius: 5px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+}
+
+
+
+/* LARGE */
+@media (min-width: 920px){
+    .gallery-container img {
+        width: 16em; 
+        height: auto;
+        /* object-fit: cover; */
+        border-radius: 5px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+}

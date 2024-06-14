@@ -48,7 +48,7 @@
 
                 <!-- all small dit -->
                 <div class=" flex  space-between ">
-                    <label for="text-color">Set Text Color: </label>
+                    <label for="text-color"></label>
                     <input type="color" id="text-color" name="textColor" value="#252525" onchange="textColor(event)" />
                     <!-- <div onclick="event.stopPropagation()" class="text-edit-container">
                     <img onclick="onIncreaseFont()" class=" pointer "
@@ -66,7 +66,7 @@
                 <!-- d n s -->
                 <div class=" flex  space-between ">
                     <button class="footer-btn"><a href="#" onclick="downloadCanvas(this)" download>Download</a></button>
-                    <button class="footer-btn"><a href="#" >Save</a></button>
+                    <button class="footer-btn save"><a href="#" >Save</a></button>
                     <button class="footer-btn"><a href="#" >Facebook</a></button>
                 </div>
 
@@ -91,8 +91,8 @@
         </div>
     </footer>
     <script src="./js/service/util-service.js"></script>
-    <script src="./js/service/canvas.service.js"></script>
     <script src="./js/service/meme-service.js"></script>
+    <script src="./js/service/canvas.service.js"></script>
     <script src="./js/controllers/meme-controller.js"></script>
     <script src="./js/controllers/canvas-controller.js"></script>
     <script src="./js/controllers/main-controller.js"></script>

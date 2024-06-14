@@ -6,7 +6,7 @@ function onInit() {
     gElCanvas.addEventListener('click', onMouseClick)
     renderMeme()
     renderGallery()
-    // addListeners()
+    addListeners()
     document.querySelector('.gallery-container').classList.remove('hidden')
     document.querySelector('.editor-container').classList.add('hidden')
     updateTextInput()
