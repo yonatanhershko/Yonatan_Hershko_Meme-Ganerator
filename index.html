@@ -42,7 +42,7 @@
                 <!-- add switch remove -->
                 <div>
                     <button onclick="onAddLine()">+</button>
-                    <button>-</button>
+                    <button onclick="onDeleteLine()">-</button>
                     <button onclick="onSwitchLine()">switch</button>
                 </div>
 
@@ -71,7 +71,7 @@
                 </div>
 
             </div>
-            <canvas id="myCanvas" width="400" height="400"></canvas>
+            <canvas onclick="onMouseClick(event)" id="myCanvas" width="400" height="400" ></canvas>
         </section>
 
     </main>
@@ -91,6 +91,7 @@
         </div>
     </footer>
     <script src="./js/service/util-service.js"></script>
+    <script src="./js/service/canvas.service.js"></script>
     <script src="./js/service/meme-service.js"></script>
     <script src="./js/controllers/meme-controller.js"></script>
     <script src="./js/controllers/canvas-controller.js"></script>

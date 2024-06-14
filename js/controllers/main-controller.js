@@ -3,8 +3,10 @@
 function onInit() {
     gElCanvas = document.getElementById('myCanvas')
     gCtx = gElCanvas.getContext('2d')
+    gElCanvas.addEventListener('click', onMouseClick)
     renderMeme()
     renderGallery()
+    // addListeners()
     document.querySelector('.gallery-container').classList.remove('hidden')
     document.querySelector('.editor-container').classList.add('hidden')
     updateTextInput()

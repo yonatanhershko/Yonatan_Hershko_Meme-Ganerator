@@ -17,28 +17,30 @@ function renderMeme() {
             gCtx.textAlign = 'center'
             gCtx.textBaseline = 'top'
 
-            var y
+            let y
             if (idx === 0) {
-                y = 10
+                y = 10 // Top line
             } else if (idx === 1) {
-                y = gElCanvas.height - line.size - 10
+                y = gElCanvas.height - line.size - 10 // Bottom line
             } else {
-                y = gElCanvas.height / 2 - (line.size * (meme.lines.length - 2)) / 2 + (idx - 2) * line.size
+                y = gElCanvas.height / 2 - (line.size * (meme.lines.length - 2)) / 2 + (idx - 2) * line.size // Middle lines
             }
 
-            gCtx.fillText(line.txt, gElCanvas.width / 2, y)
+            line.x = gElCanvas.width / 2
+            line.y = y
+            line.width = gCtx.measureText(line.txt).width
+            line.height = line.size
+
+            gCtx.fillText(line.txt, line.x, line.y)
 
             if (idx === meme.selectedLineIdx) {
-                const textWidth = gCtx.measureText(line.txt).width
-                const textHeight = line.size
-                gCtx.strokeStyle = '#FFFAFA'
+                gCtx.strokeStyle = 'black'
                 gCtx.lineWidth = 2
-                gCtx.strokeRect(gElCanvas.width / 2 - textWidth / 2 - 5, y - 5, textWidth + 10, textHeight + 10)
+                gCtx.strokeRect(line.x - line.width / 2 - 5, line.y - 5, line.width + 10, line.height + 10)
             }
         })
     }
 }
-
 
 //text change
 function onTextType() {
@@ -47,9 +49,8 @@ function onTextType() {
     renderMeme()
 }
 
-//text change
 function setLineTxt(text) {
-    gMeme.lines[0].txt = text
+    gMeme.lines[gMeme.selectedLineIdx].txt = text
 }
 
 ///clr
@@ -80,14 +81,6 @@ function onDecreaseFont() {
     }
 }
 
-function setLineTxt(text) {
-    gMeme.lines[gMeme.selectedLineIdx].txt = text
-}
-
-function updateTextInput() {
-    const inputField = document.querySelector('.meme-text-input')
-    inputField.value = gMeme.lines[gMeme.selectedLineIdx].txt
-}
 
 function onAddLine() {
     addLine()
@@ -99,6 +92,37 @@ function onAddLine() {
 function onSwitchLine() {
     switchLine()
     renderMeme()
+    updateTextInput()
 }
 
+
+function onMouseClick(ev) {
+    const { offsetX, offsetY } = ev
+    const meme = getMeme()
+
+    const clickedLineIdx = meme.lines.findIndex(line => {
+        return (
+            offsetX >= line.x - line.width / 2 &&
+            offsetX <= line.x + line.width / 2 &&
+            offsetY >= line.y &&
+            offsetY <= line.y + line.height
+        )
+    })
+
+    if (clickedLineIdx !== -1) {
+        meme.selectedLineIdx = clickedLineIdx
+        updateTextInput()
+        renderMeme()
+        console.log('Selected line index:', clickedLineIdx)
+    } else {
+        console.log('Clicked outside of any text line')
+    }
+}
+
+function onDeleteLine(){
+
+    deleteLine()
+    updateTextInput()
+    renderMeme()
+}
 

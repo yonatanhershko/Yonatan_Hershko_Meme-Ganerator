@@ -27,7 +27,7 @@ var gMeme = {
     lines: [
         {
             txt: 'I sometimes eat Falafel',
-            size: 20,
+            size: 30,
             color: '#252525',
             x: null,
             y: 50
@@ -46,8 +46,8 @@ function getImageById(id) {
 
 function addLine() {
     var newLine = {
-        txt: 'Pizza',
-        size: 20,
+        txt: 'But never pickles',
+        size: 30,
         color: '#252525',
         x: null,
         y: 500,
@@ -59,3 +59,24 @@ function switchLine() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
     document.querySelector('.meme-text-input').value = gMeme.lines[gMeme.selectedLineIdx].txt
 }
+
+function updateTextInput() {
+    const inputField = document.querySelector('.meme-text-input')
+    const inputColor = document.getElementById('text-color')
+    inputField.value = gMeme.lines[gMeme.selectedLineIdx].txt
+    inputColor.value = gMeme.lines[gMeme.selectedLineIdx].color
+}
+
+function getSelectedLine() {
+    return gMeme.lines[gMeme.selectedLineIdx]
+  }
+function getLineIdx(line) {
+    return gMeme.lines.findIndex((currLine) => currLine === line)
+  }
+  
+  function deleteLine() {
+    const lineIdx = getLineIdx(getSelectedLine())
+    gMeme.lines.splice(lineIdx, 1)
+    gMeme.selectedLineIdx = 0
+  }
+  
