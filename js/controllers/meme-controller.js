@@ -11,14 +11,31 @@ function renderMeme() {
         gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 
-        const line = meme.lines[meme.selectedLineIdx]
-        gCtx.font = `${line.size}px Arial`
-        gCtx.fillStyle = line.color
-        gCtx.textAlign = 'center'
-        gCtx.textBaseline = 'top'
-        gCtx.fillText(line.txt, gElCanvas.width / 2, 10) // Adjust the y-coordinate to 10// 350 -> down //1 ->up
+        meme.lines.forEach((line, idx) => {
+            gCtx.font = `${line.size}px Arial`
+            gCtx.fillStyle = line.color
+            gCtx.textAlign = 'center'
+            gCtx.textBaseline = 'top'
 
-     
+            var y
+            if (idx === 0) {
+                y = 10
+            } else if (idx === 1) {
+                y = gElCanvas.height - line.size - 10
+            } else {
+                y = gElCanvas.height / 2 - (line.size * (meme.lines.length - 2)) / 2 + (idx - 2) * line.size
+            }
+
+            gCtx.fillText(line.txt, gElCanvas.width / 2, y)
+
+            if (idx === meme.selectedLineIdx) {
+                const textWidth = gCtx.measureText(line.txt).width
+                const textHeight = line.size
+                gCtx.strokeStyle = '#FFFAFA'
+                gCtx.lineWidth = 2
+                gCtx.strokeRect(gElCanvas.width / 2 - textWidth / 2 - 5, y - 5, textWidth + 10, textHeight + 10)
+            }
+        })
     }
 }
 
@@ -49,7 +66,6 @@ function onImgSelect(elImg) {
     renderMeme()
 }
 
-
 function onIncreaseFont() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
     line.size += 5
@@ -73,27 +89,16 @@ function updateTextInput() {
     inputField.value = gMeme.lines[gMeme.selectedLineIdx].txt
 }
 
+function onAddLine() {
+    addLine()
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
+    updateTextInput()
+    renderMeme()
+}
 
+function onSwitchLine() {
+    switchLine()
+    renderMeme()
+}
 
-// function drawFrameAroundText(line, y) {
-//     const textWidth = gCtx.measureText(line.txt).width;
-//     const textHeight = line.size;
-//     gCtx.strokeStyle = 'black';
-//     gCtx.lineWidth = 2;
-//     gCtx.strokeRect(gElCanvas.width / 2 - textWidth / 2 - 5, y - 5, textWidth + 10, textHeight + 10);
-// }
-
-
-// function onAddLine(){
-//     addLine()
-//     renderMeme()
-// }
-
-
-
-// function switchLine() {
-//     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
-//     document.querySelector('.meme-text-input').value = gMeme.lines[gMeme.selectedLineIdx].txt
-//     renderMeme()
-// }
 
