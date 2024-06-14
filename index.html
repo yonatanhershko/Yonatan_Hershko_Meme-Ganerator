@@ -7,6 +7,7 @@
     <title>Meme Page</title>
 
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/287346be32.js" crossorigin="anonymous"></script>
 </head>
 
 <body onload="onInit()">
@@ -41,22 +42,25 @@
 
                 <!-- add switch remove -->
                 <div>
-                    <button onclick="onAddLine()">+</button>
-                    <button onclick="onDeleteLine()">-</button>
-                    <button onclick="onSwitchLine()">switch</button>
+                    <i class="fa-solid fa-sort pointer editor-btn" style="color: #1aaee0;" onclick="onSwitchLine()"></i>
+                    <i class="fa-solid fa-square-plus pointer editor-btn" style="color: #4fab36;" onclick="onAddLine()">
+                    </i>
+                    <i class="fa-solid fa-square-minus pointer editor-btn" style="color: #9b1717;"
+                        onclick="onDeleteLine()"></i>
+
                 </div>
 
                 <!-- all small dit -->
                 <div class=" flex  space-between ">
-                    <label for="text-color"></label>
-                    <input type="color" id="text-color" name="textColor" value="#252525" onchange="textColor(event)" />
-                    <!-- <div onclick="event.stopPropagation()" class="text-edit-container">
-                    <img onclick="onIncreaseFont()" class=" pointer "
-                        src="" /> -->
 
-                    <button onclick="onIncreaseFont()">Increase </button>
-                    <button onclick="onDecreaseFont()">Decrease</button>
-                </div class=" flex  space-between ">
+                    <label for="text-color"></label>
+                    <i class="fa-solid fa-palette color-img pointer editor-btn" onclick="openColorPicker()"></i>
+                    <input type="color" id="text-color" name="textColor" value="#252525" onchange="textColor(event)" />
+
+                    <i class="fa-solid fa-font pointer editor-btn" onclick="onIncreaseFont()">+</i>
+                    <i class="fa-solid fa-font pointer editor-btn" onclick="onDecreaseFont()">-</i>
+
+                </div>
 
                 <!-- emojy -->
                 <div class=" flex  space-between ">
@@ -65,13 +69,17 @@
 
                 <!-- d n s -->
                 <div class=" flex  space-between ">
-                    <button class="footer-btn"><a href="#" onclick="downloadCanvas(this)" download>Download</a></button>
-                    <button class="footer-btn save"><a href="#" >Save</a></button>
-                    <button class="footer-btn"><a href="#" >Facebook</a></button>
+
+                    <a href="#" onclick="downloadCanvas(this)" download><i
+                            class="fa-solid fa-download pointer editor-btn" style="color: #5b42a9; "></i></a>
+                    <i class="fa-solid fa-bookmark save pointer editor-btn" style="color: #1153c5;"> <a
+                            href="#"></a></i>
+                    <a href="#"><i class="fa-brands fa-facebook-f pointer editor-btn"></i></a>
+
                 </div>
 
             </div>
-            <canvas onclick="onMouseClick(event)" id="myCanvas" width="400" height="400" ></canvas>
+            <canvas onclick="onMouseClick(event)" id="myCanvas" width="400" height="400"></canvas>
         </section>
 
     </main>

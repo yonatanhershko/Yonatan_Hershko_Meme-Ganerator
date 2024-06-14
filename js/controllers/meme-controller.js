@@ -34,9 +34,7 @@ function renderMeme() {
             gCtx.fillText(line.txt, line.x, line.y)
 
             if (idx === meme.selectedLineIdx) {
-                gCtx.strokeStyle = 'white'
-                gCtx.lineWidth = 2
-                gCtx.strokeRect(line.x - line.width / 2 - 5, line.y - 5, line.width + 10, line.height + 10)
+                drawSelectedLineFrame(line)
             }
         })
     }
@@ -55,10 +53,16 @@ function setLineTxt(text) {
 
 ///clr
 function textColor(event) {
-    const color = event.target.value
-    gMeme.lines[gMeme.selectedLineIdx].color = color
-    renderMeme()
+    const newColor = event.target.value
+    const meme = getMeme()
+    const selectedLineIdx = meme.selectedLineIdx
+    if (selectedLineIdx !== -1 && meme.lines[selectedLineIdx]) {
+        meme.lines[selectedLineIdx].color = newColor
+        updatePaletteIconColor(newColor)
+        renderMeme()
+    }
 }
+
 //img select
 function onImgSelect(elImg) {
     const selectedImgId = +elImg.dataset.imgId
@@ -114,15 +118,22 @@ function onMouseClick(ev) {
         updateTextInput()
         renderMeme()
         addMouseListeners()
-        console.log('you got it');
+        console.log('you got it')
     } else {
+        meme.selectedLineIdx = -1
+  
+        renderMeme()
         removeMouseListeners()
+        
     }
 }
+
 
 function onDeleteLine() {
     deleteLine()
     updateTextInput()
     renderMeme()
 }
+
+
 

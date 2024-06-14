@@ -63,8 +63,18 @@ function switchLine() {
 function updateTextInput() {
     const inputField = document.querySelector('.meme-text-input')
     const inputColor = document.getElementById('text-color')
-    inputField.value = gMeme.lines[gMeme.selectedLineIdx].txt
-    inputColor.value = gMeme.lines[gMeme.selectedLineIdx].color
+    const selectedLineIdx = gMeme.selectedLineIdx
+
+    if (selectedLineIdx !== -1 && gMeme.lines[selectedLineIdx]) {
+        const selectedLine = gMeme.lines[selectedLineIdx]
+        inputField.value = selectedLine.txt
+        inputColor.value = selectedLine.color
+        updatePaletteIconColor(selectedLine.color) // Update palette icon color when updating the input
+    } else {
+        inputField.value = ''
+        inputColor.value = '#000000' // default color or any other color you prefer
+        updatePaletteIconColor('#000000') // Update palette icon color to default
+    }
 }
 
 function getSelectedLine() {
@@ -80,3 +90,28 @@ function getLineIdx(line) {
     gMeme.selectedLineIdx = 0
   }
   
+  function drawSelectedLineFrame(line) {
+    if (line) {
+        gCtx.strokeStyle = 'white'
+        gCtx.lineWidth = 2
+        gCtx.strokeRect(line.x - line.width / 2 - 5, line.y - 5, line.width + 10, line.height + 10)
+    }
+}
+
+
+
+
+
+
+  ///icone stuff
+
+  function openColorPicker() {
+    const colorPicker = document.getElementById('text-color')
+    colorPicker.click() // Simulate a click on the color input
+}
+
+
+  function updatePaletteIconColor(color) {
+    const paletteIcon = document.querySelector('.fa-palette')
+    paletteIcon.style.color = color
+}
