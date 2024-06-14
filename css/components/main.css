@@ -43,3 +43,7 @@
     color: #005ca3;
     cursor: pointer;
 }
+
+.editor-modal-center{
+    flex-direction: column;
+}

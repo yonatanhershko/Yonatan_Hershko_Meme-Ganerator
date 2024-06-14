@@ -28,8 +28,9 @@ var gMeme = {
         {
             txt: 'I sometimes eat Falafel',
             size: 30,
+            font: 'Impact, Haettenschweiler, Arial Narrow Bold, sans-serif',
             color: '#252525',
-            x: null,
+            x: 200,
             y: 50
         },
     ],
@@ -45,14 +46,24 @@ function getImageById(id) {
 }
 
 function addLine() {
-    var newLine = {
+    const newLine = {
         txt: 'But never pickles',
         size: 30,
+        font: 'Impact, Haettenschweiler, Arial Narrow Bold, sans-serif',
         color: '#252525',
-        x: null,
-        y: 500,
-    }
-    gMeme.lines.push(newLine)
+        x: 200,
+        y: calculateNewLineY(), 
+    };
+    gMeme.lines.push(newLine);
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
+    renderMeme();
+}
+
+function calculateNewLineY() {
+    const linesCount = gMeme.lines.length;
+    if (linesCount === 0) return 10// first line 
+    if (linesCount === 1) return gElCanvas.height - gMeme.lines[0].size - 10// Sec 
+    return gElCanvas.height / 2 - ((linesCount - 2) * 30) / 2 + (linesCount - 2) * 30
 }
 
 function switchLine() {
@@ -79,18 +90,18 @@ function updateTextInput() {
 
 function getSelectedLine() {
     return gMeme.lines[gMeme.selectedLineIdx]
-  }
+}
 function getLineIdx(line) {
     return gMeme.lines.findIndex((currLine) => currLine === line)
-  }
-  
-  function deleteLine() {
+}
+
+function deleteLine() {
     const lineIdx = getLineIdx(getSelectedLine())
     gMeme.lines.splice(lineIdx, 1)
     gMeme.selectedLineIdx = 0
-  }
-  
-  function drawSelectedLineFrame(line) {
+}
+
+function drawSelectedLineFrame(line) {
     if (line) {
         gCtx.strokeStyle = 'white'
         gCtx.lineWidth = 2
@@ -102,16 +113,27 @@ function getLineIdx(line) {
 
 
 
+///icone stuff
 
-  ///icone stuff
-
-  function openColorPicker() {
+function openColorPicker() {
     const colorPicker = document.getElementById('text-color')
     colorPicker.click() // Simulate a click on the color input
 }
 
 
-  function updatePaletteIconColor(color) {
+function updatePaletteIconColor(color) {
     const paletteIcon = document.querySelector('.fa-palette')
     paletteIcon.style.color = color
+}
+
+function alignLeftText() {
+    const selectedLineIdx = gMeme.selectedLineIdx
+    // console.log('great ')
+    if (selectedLineIdx === -1) return
+    console.log('hhh')
+    const selectedLine = gMeme.lines[selectedLineIdx]
+
+    selectedLine.x = gElCanvas.width * 0.25
+
+    renderMeme()
 }

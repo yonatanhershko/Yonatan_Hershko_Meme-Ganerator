@@ -51,14 +51,28 @@
                 </div>
 
                 <!-- all small dit -->
-                <div class=" flex  space-between ">
+                <div class=" editor-modal-center flex space-between align-center  ">
+                    <div class="">
+                        <i class="fa-solid fa-font pointer editor-btn" onclick="onIncreaseFont()">+</i>
+                        <i class="fa-solid fa-font pointer editor-btn" onclick="onDecreaseFont()">-</i>
+                        <i class="fa-solid fa-align-left pointer" onclick="onAlignLeftText()"></i>
+                        <i class="fa-solid fa-align-center"></i>
+                        <i class="fa-solid fa-align-right"></i>
+                    </div>
 
-                    <label for="text-color"></label>
-                    <i class="fa-solid fa-palette color-img pointer editor-btn" onclick="openColorPicker()"></i>
-                    <input type="color" id="text-color" name="textColor" value="#252525" onchange="textColor(event)" />
+                    <div class="">
+                        <select class="fontDropdown" onchange="onSetFont(this.value)"
+                            value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">
+                            <option value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Impact</option>
+                            <option value="Franklin Gothic Medium"> Franklin</option>
+                            <option value="Verdana"> Verdana</option>
+                        </select>
+                        <i class="fa-solid fa-underline"></i>
+                        <i class="fa-solid fa-palette color-img pointer editor-btn" onclick="openColorPicker()"></i>
+                        <input type="color" id="text-color" name="textColor" value="#252525"
+                            onchange="textColor(event)" />
 
-                    <i class="fa-solid fa-font pointer editor-btn" onclick="onIncreaseFont()">+</i>
-                    <i class="fa-solid fa-font pointer editor-btn" onclick="onDecreaseFont()">-</i>
+                    </div>
 
                 </div>
 

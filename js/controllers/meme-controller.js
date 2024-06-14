@@ -12,27 +12,25 @@ function renderMeme() {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 
         meme.lines.forEach((line, idx) => {
-            gCtx.font = `${line.size}px Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif`
+            gCtx.font = `${line.size}px ${line.font}`
             gCtx.fillStyle = line.color
             gCtx.textAlign = 'center'
             gCtx.textBaseline = 'top'
 
-            let y
-            if (idx === 0) {
-                y = 10 // Top line
-            } else if (idx === 1) {
-                y = gElCanvas.height - line.size - 10 // Bottom line
-            } else {
-                y = gElCanvas.height / 2 - (line.size * (meme.lines.length - 2)) / 2 + (idx - 2) * line.size // Middle lines
+            if (line.y === undefined) {
+                if (idx === 0) {
+                    line.y = 10 // Top line
+                } else if (idx === 1) {
+                    line.y = gElCanvas.height - line.size - 10 // Bottom line
+                } else {
+                    line.y = gElCanvas.height / 2 - (line.size * (meme.lines.length - 2)) / 2 + (idx - 2) * line.size // Middle lines
+                }
             }
 
-            line.x = gElCanvas.width / 2
-            line.y = y
             line.width = gCtx.measureText(line.txt).width
             line.height = line.size
 
             gCtx.fillText(line.txt, line.x, line.y)
-
             if (idx === meme.selectedLineIdx) {
                 drawSelectedLineFrame(line)
             }
@@ -121,10 +119,10 @@ function onMouseClick(ev) {
         console.log('you got it')
     } else {
         meme.selectedLineIdx = -1
-  
+
         renderMeme()
         removeMouseListeners()
-        
+
     }
 }
 
@@ -136,4 +134,17 @@ function onDeleteLine() {
 }
 
 
+function onSetFont(font) {
+    const meme = getMeme()
+    if (meme.selectedLineIdx !== -1 && meme.lines[meme.selectedLineIdx]) {
+        meme.lines[meme.selectedLineIdx].font = font
+        renderMeme()
+    }
+}
+
+
+function onAlignLeftText() {
+    alignLeftText()
+    renderMeme()
+}
 
