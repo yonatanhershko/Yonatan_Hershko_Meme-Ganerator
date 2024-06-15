@@ -9,3 +9,5 @@ function renderGallery() {
     })
     elGalleryContainer.innerHTML = strHTMLs.join('')
 }
+
+

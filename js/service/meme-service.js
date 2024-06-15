@@ -3,7 +3,22 @@
 const textLines = ['homework is exciting today',
     'Sprint 2 be like', 'When you start dreaming code', 'When Assie hear\'s about Flex']
 
-const memeStorge = 'meme'
+
+const MEME_STORGE = 'meme'
+var gSaveMeme =[]
+var savedMemeIdx
+
+const gEmojis = [
+    { emojiTxt: '🦛', idx: 0 },
+    { emojiTxt: '🦔', idx: 1 },
+    { emojiTxt: '☠️', idx: 2 },
+    { emojiTxt: '⭐', idx: 3 },
+    { emojiTxt: '👓', idx: 4 },
+  ]
+
+  function getImojis() {
+    return gEmojis
+  }
 
 var gImgs = [
     { id: 1, url: './meme-imgs/1.jpg', keywords: ['funny', 'man', 'mad'] },
@@ -41,6 +56,7 @@ var gMeme = {
         },
     ],
 }
+
 var gKeywordSearchCountMap = { funny: 12, animal: 16, baby: 2 }
 
 function getMeme() {
@@ -190,22 +206,52 @@ function downLine() {
     renderMeme()
 }
 
-function saveMeme(savedMemeIdx) {
-    var memes = getFromStorage('savedMemes')
-    if (!memes || !memes.length) memes = []
-  
-    const currElImg = gMeme.elImg
-    gMeme.elImg = {
-      src: gMeme.elImg.src,
-      width: gMeme.elImg.width,
-      height: gMeme.elImg.height,
+
+function addEmojiToCanvas(idx) {
+    const emoji = gEmojis.find(emoji => emoji.idx === idx)
+    if (!emoji) return
+
+    const newLine = {
+        txt: emoji.emojiTxt,
+        size: 30,
+        font: 'Impact, Haettenschweiler, Arial Narrow Bold, sans-serif',
+        color: '#252525',
+        x: gElCanvas.width / 2,
+        y: gElCanvas.height / 2, 
     }
+    gMeme.lines.push(newLine) 
+    renderMeme() 
+}
+
+
+
+
+function getKeywords() {
+    const words = getBestKeywords()
+    const maxSize = window.innerWidth < 500 ? 17 : 23
+    var strHTML = ''
+    words.map((word) => {
+      strHTML += `
+      <p 
+      style="font-size: ${
+        10 + word.usage > maxSize ? maxSize : 10 + word.usage
+      }px"
+      onclick="onSetFilter('${word.keyword}')"
+      class="pointer keyword"
+      >
+      ${word.keyword}
+      </p>
+      `
+    })
   
-    gMeme.display = gElCanvas.toDataURL()
-  
-    if (typeof savedMemeIdx === 'number') memes.splice(savedMemeIdx, 1, gMeme)
-    else memes.unshift(gMeme)
-  
-    saveToStorage('savedMemes', memes)
-    gMeme.elImg = currElImg
+    return strHTML
   }
+
+  function getBestKeywords() {
+    const entries = Object.entries(gKeywordSearchCountMap)
+    return entries.map((entry) => ({
+      keyword: entry[0],
+      usage: entry[1],
+    }))
+  }
+  

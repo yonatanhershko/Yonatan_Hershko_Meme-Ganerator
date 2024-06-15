@@ -1,11 +1,11 @@
 'use strict'
 
-let galleryContainer = document.querySelector('.gallery-container')
-let canvasContainer = document.querySelector('.editor-container')
-let topGallerySearch = document.querySelector('.top-gallery-search')
-let footer = document.querySelector('.footer-container')
-let aboutMe = document.querySelector('.aboutme-container')
-
+let galleryContainerDis = document.querySelector('.gallery-container')
+let canvasContainerDis = document.querySelector('.editor-container')
+let topGallerySearchDis = document.querySelector('.top-gallery-search')
+let footerDis = document.querySelector('.footer-container')
+let aboutMeDis = document.querySelector('.aboutme-container')
+let saveMemeDis =  document.querySelector('.saved-meme-container')
 
 
 function onInit() {
@@ -15,43 +15,58 @@ function onInit() {
     renderMeme()
     renderGallery()
     addListeners()
+    // onRenderSavedGallery()
 
     document.querySelector('.gallery-container').classList.remove('hidden')
     document.querySelector('.editor-container').classList.add('hidden')
     document.querySelector('.aboutme-container').classList.add('hidden')
-
+    document.querySelector('.saved-meme-container').classList.add('hidden')
     updateTextInput()
 }
 
 
 function showEditor() {
-    canvasContainer.classList.remove('hidden')
+    canvasContainerDis.classList.remove('hidden')
 
-    galleryContainer.classList.add('hidden')
-    topGallerySearch.classList.add('hidden')
-    footer.classList.add('hidden')
-    aboutMe.classList.add('hidden')
+    galleryContainerDis.classList.add('hidden')
+    topGallerySearchDis.classList.add('hidden')
+    footerDis.classList.add('hidden')
+    aboutMeDis.classList.add('hidden')
+    saveMemeDis.classList.add('hidden')
    
 
 }
 
 
 function onShowGallery() {
-    galleryContainer.classList.remove('hidden')
-    topGallerySearch.classList.remove('hidden')
-    footer.classList.remove('hidden')
+    galleryContainerDis.classList.remove('hidden')
+    topGallerySearchDis.classList.remove('hidden')
+    footerDis.classList.remove('hidden')
 
-    canvasContainer.classList.add('hidden')
-    aboutMe.classList.add('hidden')
+    canvasContainerDis.classList.add('hidden')
+    aboutMeDis.classList.add('hidden')
+    saveMemeDis.classList.add('hidden')
 }
 
 function onShowAbout() {
-    galleryContainer.classList.add('hidden')
-    canvasContainer.classList.add('hidden')
-    topGallerySearch.classList.add('hidden')
+    galleryContainerDis.classList.add('hidden')
+    canvasContainerDis.classList.add('hidden')
+    topGallerySearchDis.classList.add('hidden')
+    saveMemeDis.classList.add('hidden')
 
-    footer.classList.remove('hidden')
-    aboutMe.classList.remove('hidden')
+    footerDis.classList.remove('hidden')
+    aboutMeDis.classList.remove('hidden')
+}
+
+function onShowSavedMemes() {
+    saveMemeDis.classList.remove('hidden')
+    footerDis.classList.remove('hidden')
+
+    aboutMeDis.classList.add('hidden')
+    galleryContainerDis.classList.add('hidden')
+    canvasContainerDis.classList.add('hidden')
+    topGallerySearchDis.classList.add('hidden')
+    saveMemeDis.classList.add('hidden')
 }
 
 function toggleMenu() {

@@ -49,8 +49,27 @@
     clip: rect(0, 0, 0, 0);
     overflow: hidden;
     white-space: nowrap;
+    transition: width 0.3s ease, height 0.3s ease;
 }
 
+#text-color:focus,
+#text-color:hover {
+    width: 40px; 
+    height: 40px; 
+    clip: auto;
+    overflow: visible;
+    z-index: 10;
+    left: 0; 
+}
+
+.color-picker-label {
+    display: inline-block;
+    position: relative;
+}
+
+.color-img.pointer.editor-btn {
+    cursor: pointer;
+}
 
 
 

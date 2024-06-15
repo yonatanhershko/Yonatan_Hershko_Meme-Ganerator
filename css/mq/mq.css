@@ -1,6 +1,6 @@
 /* MOBILE */
 @media (max-width: 740px) {
-    .gallery-container img {
+    .card {
         width: 10em;
         height: auto;
         /* object-fit: cover; */

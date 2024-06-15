@@ -5,7 +5,7 @@
    
 }
 
-.gallery-container img {
+.card{
     width: 16em; 
     height: auto;
     /* object-fit: cover; */
@@ -13,10 +13,12 @@
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.gallery-container img:hover {
+
+.card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
+
 
 

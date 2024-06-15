@@ -78,20 +78,19 @@ function onImgSelect(elImg) {
 //Change Funt Size
 function onIncreaseFont() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
-    if (!line)return 
+    if (!line) return
     line.size += 5
     renderMeme()
 }
 
 function onDecreaseFont() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
-    if (!line)return 
+    if (!line) return
     if (line.size > 5) {
         line.size -= 5
         renderMeme()
     }
 }
-
 
 function onAddLine() {
     addLine()
@@ -102,12 +101,11 @@ function onAddLine() {
 
 function onSwitchLine() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
-    if (!line)return 
+    if (!line) return
     switchLine()
     renderMeme()
     updateTextInput()
 }
-
 
 function onMouseClick(ev) {
     const { offsetX, offsetY } = ev
@@ -139,13 +137,11 @@ function onMouseClick(ev) {
     }
 }
 
-
 function onDeleteLine() {
     deleteLine()
     updateTextInput()
     renderMeme()
 }
-
 
 function onSetFont(font) {
     const meme = getMeme()
@@ -156,42 +152,40 @@ function onSetFont(font) {
 }
 
 
-
 //Align Text
 function onAlignLeftText() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
-    if (!line)return 
+    if (!line) return
     alignLeftText()
 }
 
 function onAlignCenterText() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
-    if (!line)return 
+    if (!line) return
     alignCenterText()
 }
 
-function onAlignRightText(){
+function onAlignRightText() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
-    if (!line)return 
+    if (!line) return
     alignRightText()
 }
 
 function onAddStroke() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
-    if (!line)return 
+    if (!line) return
     addStroke()
 }
 
-
-function onUpLine(){
+function onUpLine() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
-    if (!line)return 
+    if (!line) return
     upLine()
 }
 
-function onDownLine(){
+function onDownLine() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
-    if (!line)return 
+    if (!line) return
     downLine()
 }
 
@@ -206,6 +200,4 @@ function onGetRandomMeme() {
     renderMeme()
 }
 
-function onSaveMeme(){
-    
-}
+
