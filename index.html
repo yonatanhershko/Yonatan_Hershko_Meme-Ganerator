@@ -71,7 +71,7 @@
                 </div>
 
                 <!-- all small dit -->
-                <div class=" editor-modal-center flex space-between align-center  ">
+                <div class=" editor-modal-center  ">
                     <div class="">
                         <i class="fa-solid fa-font pointer editor-btn" onclick="onIncreaseFont()">+</i>
                         <i class="fa-solid fa-font pointer editor-btn" onclick="onDecreaseFont()">-</i>
@@ -81,7 +81,7 @@
                     </div>
 
                     <div class="">
-                        <select class="fontDropdown " onchange="onSetFont(this.value)"
+                        <select class="font-family-select" onchange="onSetFont(this.value)"
                             value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">
                             <option value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Impact</option>
                             <option value="Franklin Gothic Medium"> Franklin</option>
@@ -105,10 +105,10 @@
                 <div class=" flex  space-between ">
 
                     <a href="#" onclick="downloadCanvas(this)" download><i
-                            class="fa-solid fa-download pointer editor-btn" style="color: #5b42a9; "></i></a>
-                    <i class="fa-solid fa-bookmark save pointer editor-btn" style="color: #1153c5;"> <a
+                            class="fa-solid fa-download pointer editor-btn" ></i></a>
+                    <i class="fa-solid fa-bookmark save"  onclick="onSaveMeme()"> <a
                             href="#"></a></i>
-                    <a href="#"><i class="fa-brands fa-facebook-f pointer editor-btn"
+                    <a href="#"><i class="fa-brands fa-facebook-f pointer "
                             onclick="onUploadFacebookImg()"></i></a>
 
                 </div>
@@ -121,7 +121,7 @@
             <div class="aboutme-container">
                 <h2> Welcome To My Meme Generator!</h2>
             <p> During my Bootcamp at "Coding Academy," I undertook the challenge of creating a custom meme generator
-                entirely from scratch. This project was built using vanilla JavaScript, HTML, and CSS, crafted by me, &nbsp &nbsp 
+                entirely from scratch. This project was built using vanilla JavaScript, HTML, and CSS, crafted by me, 
                 Yonatan Hershko. Thank you for your support and interest in my meme generator🦔</p>
             </div>
         </section>
@@ -144,6 +144,7 @@
         </div>
     </footer>
     <script src="./js/service/util-service.js"></script>
+    <script src="./js/service/local-storge.js"></script>
     <script src="./js/service/meme-service.js"></script>
     <script src="./js/service/sharing-facebook.js"></script>
     <script src="./js/service/canvas.service.js"></script>

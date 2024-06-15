@@ -1,10 +1,10 @@
 :root {
     --header-bg-clr:
-        linear-gradient(to right, #0f9bb3,
-            #00a5af, #00ada2, #00b48e, #2fba74);
+        linear-gradient(to right, #6cb7d4, #9ecdd4, #d6d8ba, #ded6a0, #e0d68a);
+    --hover-flex-bg-clr: linear-gradient(to left, #e0d68a, #ded6a0, #d6d8ba, #9ecdd4, #6cb7d4);
+    --btn-clr: #FFFAFA;
 
-
-
-            --editor-modal-bg-clr:  rgba(57, 57, 52, 0.9);
-            --editor-centermodal-clr : rgba(25, 165, 159, 1);
+    --about-me-bg-clr: rgba(65, 65, 61, 0.9);
+    --editor-modal-bg-clr: rgba(57, 57, 52, 0.9);
+    --editor-centermodal-clr: rgba(25, 165, 159, 1);
 }

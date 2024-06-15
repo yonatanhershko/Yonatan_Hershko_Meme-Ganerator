@@ -205,3 +205,7 @@ function onGetRandomMeme() {
 
     renderMeme()
 }
+
+function onSaveMeme(){
+    
+}

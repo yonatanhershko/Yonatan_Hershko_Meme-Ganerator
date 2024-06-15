@@ -1,7 +1,4 @@
-
-
-
-.editor-container{
+.editor-container {
     flex-wrap: wrap-reverse;
     flex-direction: row-reverse;
     justify-content: space-evenly;
@@ -20,23 +17,26 @@
 }
 
 
-.editor-modal-center{
+.editor-modal-center {
+    display: flex;
     width: 350px;
-    background-color: var(--editor-centermodal-clr );
+    background-color: var(--editor-centermodal-clr);
     border-radius: 25px;
+    height: 125px;
+    justify-content: center;
+    align-items: center;
 }
-
 
 /* .text-edit-container img {
     width: 15px;
   } */
 
-  .meme-text-input {
+.meme-text-input {
     margin-inline: 10px;
-    padding: 4px 15px;
+    padding: 8px 18px;
     border: 1px solid #22252c;
     border-radius: 12px;
-   
+
 }
 
 
@@ -56,14 +56,69 @@
 
 .fa-facebook-f {
     transition: color 0.5s ease;
+    color: var(--btn-clr);
+    padding: 10px;
+    font-size: 28px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .fa-facebook-f:hover {
-    animation: tada 0.8s;
+    transform: scale(1.2);
     color: #005ca3;
     cursor: pointer;
 }
 
-.editor-modal-center{
+.fa-bookmark {
+    transition: color 0.5s ease;
+    color: var(--btn-clr);
+    padding: 10px;
+    font-size: 28px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.fa-bookmark:hover {
+    transform: scale(1.2);
+    color: #1153c5;
+    cursor: pointer;
+}
+
+.fa-download {
+    transition: color 0.5s ease;
+    color: var(--btn-clr);
+    padding: 10px;
+    font-size: 28px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.fa-download:hover {
+    transform: scale(1.2);
+    color: #744ee6; 
+    cursor: pointer;
+}
+
+
+
+
+.editor-modal-center {
     flex-direction: column;
+}
+
+
+.font-family-select {
+    width: 50%;
+    padding: 8px;
+    font-size: 1.0625em;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #22252c;
+    background-color: var(--dark-color1);
+    color: #313131;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.font-family-select option {
+    background-color: #22252c;
+    /* Background color for options */
+    color: #f7feff;
+    /* Text color for options */
 }

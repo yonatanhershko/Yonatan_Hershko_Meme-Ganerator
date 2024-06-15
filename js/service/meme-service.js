@@ -1,6 +1,9 @@
 'use strict'
+
 const textLines = ['homework is exciting today',
-     'Sprint 2 be like', 'When you start dreaming code', 'When Assie hear\'s about Flex']
+    'Sprint 2 be like', 'When you start dreaming code', 'When Assie hear\'s about Flex']
+
+const memeStorge = 'meme'
 
 var gImgs = [
     { id: 1, url: './meme-imgs/1.jpg', keywords: ['funny', 'man', 'mad'] },
@@ -186,3 +189,23 @@ function downLine() {
     selectedLine.y += 10
     renderMeme()
 }
+
+function saveMeme(savedMemeIdx) {
+    var memes = getFromStorage('savedMemes')
+    if (!memes || !memes.length) memes = []
+  
+    const currElImg = gMeme.elImg
+    gMeme.elImg = {
+      src: gMeme.elImg.src,
+      width: gMeme.elImg.width,
+      height: gMeme.elImg.height,
+    }
+  
+    gMeme.display = gElCanvas.toDataURL()
+  
+    if (typeof savedMemeIdx === 'number') memes.splice(savedMemeIdx, 1, gMeme)
+    else memes.unshift(gMeme)
+  
+    saveToStorage('savedMemes', memes)
+    gMeme.elImg = currElImg
+  }

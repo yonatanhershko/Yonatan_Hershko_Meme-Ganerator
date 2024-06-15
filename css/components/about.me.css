@@ -9,7 +9,7 @@
 }
 
 .aboutme-container {
-    background-color: var( --editor-modal-bg-clr);
+    background-color: var( --about-me-bg-clr);
     width: 80%;
     height: 80%;
     max-width: 600px; 
@@ -34,6 +34,7 @@
 }
 
 .aboutme p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     line-height: 1.9em; 
 }
