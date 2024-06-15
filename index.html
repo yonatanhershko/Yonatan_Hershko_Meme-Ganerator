@@ -15,7 +15,7 @@
     <header>
         <div class="main-screen" onclick="toggleMenu()"></div>
         <div class="header-container flex space-between align-center ">
-            <div class="logo pointer" onclick="showEditor()">Sunny Memes</div>
+            <div class="logo pointer" onclick="onShowGallery()">Sunny Memes</div>
             <div class="main-header-area flex ">
                 <a class="pointer" onclick="onShowGallery()">Gallery</a>
                 <a>Save Meme</a>
@@ -41,11 +41,11 @@
     </header>
 
     <main>
+        <section class="gallery-background">
         <section class="flex top-gallery-search space-between align-center">
             <div> <input oninput="" class="meme-search" type="text" placeholder="Search Here" /></div>
             <div class="search-keywords-container"> words,words</div>
-            <div class="get-random-meme"> Im Flexible</div>
-
+            <button onclick="onGetRandomMeme(), showEditor()">I'm Flexible</button>
         </section>
 
 
@@ -54,7 +54,7 @@
             <div class="gallery-container flex ">
             </div>
         </section>
-
+    </section>
         <section class="editor-container hidden flex align-center ">
             <div class="options flex">
                 <input oninput="onTextType()" class="meme-text-input" type="text" placeholder="Enter your text here" />
@@ -66,7 +66,8 @@
                     </i>
                     <i class="fa-solid fa-square-minus pointer editor-btn" style="color: #9b1717;"
                         onclick="onDeleteLine()"></i>
-
+                        <i class="fa-solid fa-arrows-up-to-line  pointer editor-btn" onclick="onUpLine()"></i>
+                        <i class="fa-solid fa-arrows-down-to-line  pointer editor-btn" onclick="onDownLine()"></i>
                 </div>
 
                 <!-- all small dit -->

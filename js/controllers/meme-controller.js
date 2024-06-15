@@ -78,12 +78,14 @@ function onImgSelect(elImg) {
 //Change Funt Size
 function onIncreaseFont() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
+    if (!line)return 
     line.size += 5
     renderMeme()
 }
 
 function onDecreaseFont() {
     const line = gMeme.lines[gMeme.selectedLineIdx]
+    if (!line)return 
     if (line.size > 5) {
         line.size -= 5
         renderMeme()
@@ -99,6 +101,8 @@ function onAddLine() {
 }
 
 function onSwitchLine() {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    if (!line)return 
     switchLine()
     renderMeme()
     updateTextInput()
@@ -123,12 +127,14 @@ function onMouseClick(ev) {
         updateTextInput()
         renderMeme()
         addMouseListeners()
+        // addTouchListeners()
         console.log('you got it')
     } else {
         meme.selectedLineIdx = -1
 
         renderMeme()
         removeMouseListeners()
+        // removeTouchListeners()
 
     }
 }
@@ -153,18 +159,49 @@ function onSetFont(font) {
 
 //Align Text
 function onAlignLeftText() {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    if (!line)return 
     alignLeftText()
 }
 
 function onAlignCenterText() {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    if (!line)return 
     alignCenterText()
 }
 
 function onAlignRightText(){
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    if (!line)return 
     alignRightText()
 }
 
 function onAddStroke() {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    if (!line)return 
     addStroke()
 }
 
+
+function onUpLine(){
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    if (!line)return 
+    upLine()
+}
+
+function onDownLine(){
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    if (!line)return 
+    downLine()
+}
+
+function onGetRandomMeme() {
+    const randomImg = gImgs[Math.floor(Math.random() * gImgs.length)]
+    const randomTextLine = textLines[Math.floor(Math.random() * textLines.length)]
+
+    gMeme.selectedImgId = randomImg.id
+    gMeme.img = randomImg.url
+    gMeme.lines[0].txt = randomTextLine
+
+    renderMeme()
+}

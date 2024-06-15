@@ -1,4 +1,6 @@
 'use strict'
+const textLines = ['homework is exciting today',
+     'Sprint 2 be like', 'When you start dreaming code', 'When Assie hear\'s about Flex']
 
 var gImgs = [
     { id: 1, url: './meme-imgs/1.jpg', keywords: ['funny', 'man', 'mad'] },
@@ -54,15 +56,15 @@ function addLine() {
         color: '#252525',
         x: 200,
         strokeWidth: 3,
-        y: calculateNewLineY(), 
-    };
-    gMeme.lines.push(newLine);
+        y: calculateNewLineY(),
+    }
+    gMeme.lines.push(newLine)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
-    renderMeme();
+    renderMeme()
 }
 
 function calculateNewLineY() {
-    const linesCount = gMeme.lines.length;
+    const linesCount = gMeme.lines.length
     if (linesCount === 0) return 10// first line 
     if (linesCount === 1) return gElCanvas.height - gMeme.lines[0].size - 10// Sec 
     return gElCanvas.height / 2 - ((linesCount - 2) * 30) / 2 + (linesCount - 2) * 30
@@ -118,8 +120,7 @@ function drawSelectedLineFrame(line) {
 ///icone stuff
 
 function openColorPicker() {
-    const colorPicker = document.getElementById('text-color')
-    colorPicker.click() // Simulate a click on the color input
+    document.getElementById('text-color').click()
 }
 
 function updatePaletteIconColor(color) {
@@ -135,7 +136,7 @@ function alignLeftText() {
     renderMeme()
 }
 
-function alignCenterText(){
+function alignCenterText() {
     const selectedLineIdx = gMeme.selectedLineIdx
     if (selectedLineIdx === -1) return
     const selectedLine = gMeme.lines[selectedLineIdx]
@@ -143,7 +144,7 @@ function alignCenterText(){
     renderMeme()
 }
 
-function alignRightText(){
+function alignRightText() {
 
     const selectedLineIdx = gMeme.selectedLineIdx
     if (selectedLineIdx === -1) return
@@ -154,7 +155,7 @@ function alignRightText(){
     renderMeme()
 }
 
-function addStroke(){
+function addStroke() {
     const selectedLineIdx = gMeme.selectedLineIdx
     if (selectedLineIdx === -1) return
     const selectedLine = gMeme.lines[selectedLineIdx]
@@ -162,10 +163,26 @@ function addStroke(){
     // Toggle stroke on/off
     if (selectedLine.strokeWidth > 0) {
         selectedLine.strokeColor = ''
-        selectedLine.strokeWidth = 0 
+        selectedLine.strokeWidth = 0
     } else {
         selectedLine.strokeColor = 'white'
         selectedLine.strokeWidth = 3
     }
+    renderMeme()
+}
+
+function upLine() {
+    const selectedLineIdx = gMeme.selectedLineIdx
+    if (selectedLineIdx === -1) return
+    const selectedLine = gMeme.lines[selectedLineIdx]
+    selectedLine.y -= 10
+    renderMeme()
+}
+
+function downLine() {
+    const selectedLineIdx = gMeme.selectedLineIdx
+    if (selectedLineIdx === -1) return
+    const selectedLine = gMeme.lines[selectedLineIdx]
+    selectedLine.y += 10
     renderMeme()
 }

@@ -6,3 +6,22 @@
     
     gap: 10px;
 }
+
+.top-gallery-search button {
+    width: 20em; 
+    padding: 10px 20px; 
+    font-size: 1em; 
+    font-weight: bold;
+    background: var( --header-bg-clr);
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 25px; 
+    transition: transform 0.3s ease;
+    margin-block-end: 1em;
+}
+
+.top-gallery-search button:hover {
+    transform: scale(1.1);
+}
+
