@@ -29,14 +29,14 @@
                 </div>
             </button>
         </div>
-    
+
 
         <nav class="main-header-mobile  ">
             <div class="header-mobile-text flex">
-            <a class="pointer" onclick="switchView()">Gallery</a>
-            <a>Save Meme</a>
-            <a>About</a>
-        </div>
+                <a class="pointer" onclick="switchView()">Gallery</a>
+                <a>Save Meme</a>
+                <a>About</a>
+            </div>
         </nav>
 
     </header>
@@ -75,19 +75,19 @@
                     <div class="">
                         <i class="fa-solid fa-font pointer editor-btn" onclick="onIncreaseFont()">+</i>
                         <i class="fa-solid fa-font pointer editor-btn" onclick="onDecreaseFont()">-</i>
-                        <i class="fa-solid fa-align-left pointer" onclick="onAlignLeftText()"></i>
-                        <i class="fa-solid fa-align-center pointer" onclick="onAlignCenterText()"></i>
-                        <i class="fa-solid fa-align-right pointer" onclick="onAlignRightText()"></i>
+                        <i class="fa-solid fa-align-left pointer editor-btn" onclick="onAlignLeftText()"></i>
+                        <i class="fa-solid fa-align-center pointer editor-btn" onclick="onAlignCenterText()"></i>
+                        <i class="fa-solid fa-align-right pointer editor-btn" onclick="onAlignRightText()"></i>
                     </div>
 
                     <div class="">
-                        <select class="fontDropdown" onchange="onSetFont(this.value)"
+                        <select class="fontDropdown " onchange="onSetFont(this.value)"
                             value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">
                             <option value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Impact</option>
                             <option value="Franklin Gothic Medium"> Franklin</option>
                             <option value="Verdana"> Verdana</option>
                         </select>
-                        <i class="fa-solid fa-underline pointer" onclick="onAddStroke()"></i>
+                        <i class="fa-solid fa-underline pointer editor-btn" onclick="onAddStroke()"></i>
                         <i class="fa-solid fa-palette color-img pointer editor-btn" onclick="openColorPicker()"></i>
                         <input type="color" id="text-color" name="textColor" value="#252525"
                             onchange="textColor(event)" />
@@ -118,6 +118,7 @@
         </section>
 
     </main>
+
     <footer class="footer-container flex space-between align-center">
         <p> © 2024 Created by Yonatan Hershko </p>
 

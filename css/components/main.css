@@ -20,30 +20,3 @@
 }
 
 
-#text-color {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    border: none;
-    clip: rect(0, 0, 0, 0);
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-
-
-
-.fa-facebook-f {
-    transition: color 0.5s ease;
-}
-
-.fa-facebook-f:hover {
-    animation: tada 0.8s;
-    color: #005ca3;
-    cursor: pointer;
-}
-
-.editor-modal-center{
-    flex-direction: column;
-}

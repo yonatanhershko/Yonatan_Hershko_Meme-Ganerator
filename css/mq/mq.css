@@ -42,6 +42,14 @@
 
     }
 
+.editor-container{
+    flex-direction: column-reverse;
+}
+.options {
+    height: 300px;}
+
+    
+ 
 }
 
 

@@ -17,6 +17,8 @@ function switchView() {
     const galleryContainer = document.querySelector('.gallery-container')
     const canvasContainer = document.querySelector('.editor-container')
     const topGallerySearch = document.querySelector('.top-gallery-search')
+    const Footer = document.querySelector('.footer-container')
+    Footer.classList.toggle('hidden')
     topGallerySearch.classList.toggle('hidden')
     galleryContainer.classList.toggle('hidden')
     canvasContainer.classList.toggle('hidden')
