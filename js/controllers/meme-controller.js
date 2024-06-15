@@ -71,7 +71,7 @@ function textColor(event) {
 function onImgSelect(elImg) {
     const selectedImgId = +elImg.dataset.imgId
     gMeme.selectedImgId = selectedImgId
-    switchView()
+    showEditor()
     renderMeme()
 }
 
@@ -89,7 +89,6 @@ function onDecreaseFont() {
         renderMeme()
     }
 }
-
 
 
 function onAddLine() {

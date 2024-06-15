@@ -17,6 +17,12 @@
 .logo {
     font-weight: bold;
     margin-inline-start: 0.625em;
+    font-size: 2em ;
+    text-shadow:
+    -2px -2px 0 #a59a00,  
+     2px -2px 0 #a19e2f,
+    -2px  2px 0 #a19e2f,
+     2px  2px 0 #a19e2f;
 
 }
 

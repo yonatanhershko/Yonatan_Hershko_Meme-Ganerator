@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meme Page</title>
-
+    <title>SunnyMemes</title>
+    <link rel="icon" type="image/x-icon" href="./icons/icons8-sun-16.png">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/287346be32.js" crossorigin="anonymous"></script>
 </head>
@@ -15,11 +15,11 @@
     <header>
         <div class="main-screen" onclick="toggleMenu()"></div>
         <div class="header-container flex space-between align-center ">
-            <div class="logo">MemeIt😄</div>
+            <div class="logo pointer" onclick="showEditor()">Sunny Memes</div>
             <div class="main-header-area flex ">
-                <a class="pointer" onclick="switchView()">Gallery</a>
+                <a class="pointer" onclick="onShowGallery()">Gallery</a>
                 <a>Save Meme</a>
-                <a>About</a>
+                <a class="pointer" onclick="onShowAbout()">About</a>
             </div>
             <button class="btn-toggle-menu" onclick="toggleMenu()">
                 <div class="hamburger-lines">
@@ -29,13 +29,12 @@
                 </div>
             </button>
         </div>
-
-
+<!-- mobile nav -->
         <nav class="main-header-mobile  ">
             <div class="header-mobile-text flex">
-                <a class="pointer" onclick="switchView()">Gallery</a>
+                <a class="pointer" onclick="onShowGallery()">Gallery</a>
                 <a>Save Meme</a>
-                <a>About</a>
+                <a class="pointer" onclick="onShowAbout()">About</a>
             </div>
         </nav>
 
@@ -97,9 +96,9 @@
                 </div>
 
                 <!-- emojy -->
-                <div class=" flex  space-between ">
+                <!-- <div class=" flex  space-between ">
 
-                </div>
+                </div> -->
 
                 <!-- d n s -->
                 <div class=" flex  space-between ">
@@ -115,6 +114,15 @@
 
             </div>
             <canvas onclick="onMouseClick(event)" id="myCanvas" width="400" height="400"></canvas>
+        </section>
+
+        <section class="aboutme flex">
+            <div class="aboutme-container">
+                <h2> Welcome To My Meme Generator!</h2>
+            <p> During my Bootcamp at "Coding Academy," I undertook the challenge of creating a custom meme generator
+                entirely from scratch. This project was built using vanilla JavaScript, HTML, and CSS, crafted by me, &nbsp &nbsp 
+                Yonatan Hershko. Thank you for your support and interest in my meme generator🦔</p>
+            </div>
         </section>
 
     </main>
