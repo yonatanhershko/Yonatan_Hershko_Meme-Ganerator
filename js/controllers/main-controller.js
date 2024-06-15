@@ -21,3 +21,8 @@ function switchView() {
     galleryContainer.classList.toggle('hidden')
     canvasContainer.classList.toggle('hidden')
 }
+
+function toggleMenu() {
+    document.body.classList.toggle("menu-open")
+    
+  }

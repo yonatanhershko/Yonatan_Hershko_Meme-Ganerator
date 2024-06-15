@@ -10,15 +10,35 @@
     <script src="https://kit.fontawesome.com/287346be32.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="onInit()">
+<body class="main-layout" onload="onInit()">
 
-    <header class="header-container flex space-between align-center">
-        <div class="logo">MemeIt😄</div>
-        <div class="main-header-area flex ">
+    <header>
+        <div class="main-screen" onclick="toggleMenu()"></div>
+        <div class="header-container flex space-between align-center ">
+            <div class="logo">MemeIt😄</div>
+            <div class="main-header-area flex ">
+                <a class="pointer" onclick="switchView()">Gallery</a>
+                <a>Save Meme</a>
+                <a>About</a>
+            </div>
+            <button class="btn-toggle-menu" onclick="toggleMenu()">
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+            </button>
+        </div>
+    
+
+        <nav class="main-header-mobile  ">
+            <div class="header-mobile-text flex">
             <a class="pointer" onclick="switchView()">Gallery</a>
             <a>Save Meme</a>
             <a>About</a>
         </div>
+        </nav>
+
     </header>
 
     <main>
@@ -57,7 +77,7 @@
                         <i class="fa-solid fa-font pointer editor-btn" onclick="onDecreaseFont()">-</i>
                         <i class="fa-solid fa-align-left pointer" onclick="onAlignLeftText()"></i>
                         <i class="fa-solid fa-align-center pointer" onclick="onAlignCenterText()"></i>
-                        <i class="fa-solid fa-align-right pointer"onclick="onAlignRightText()"></i>
+                        <i class="fa-solid fa-align-right pointer" onclick="onAlignRightText()"></i>
                     </div>
 
                     <div class="">
@@ -88,7 +108,8 @@
                             class="fa-solid fa-download pointer editor-btn" style="color: #5b42a9; "></i></a>
                     <i class="fa-solid fa-bookmark save pointer editor-btn" style="color: #1153c5;"> <a
                             href="#"></a></i>
-                    <a href="#"><i class="fa-brands fa-facebook-f pointer editor-btn"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f pointer editor-btn"
+                            onclick="onUploadFacebookImg()"></i></a>
 
                 </div>
 
@@ -114,6 +135,7 @@
     </footer>
     <script src="./js/service/util-service.js"></script>
     <script src="./js/service/meme-service.js"></script>
+    <script src="./js/service/sharing-facebook.js"></script>
     <script src="./js/service/canvas.service.js"></script>
     <script src="./js/controllers/meme-controller.js"></script>
     <script src="./js/controllers/canvas-controller.js"></script>

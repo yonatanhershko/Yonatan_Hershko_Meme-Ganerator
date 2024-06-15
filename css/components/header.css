@@ -24,3 +24,47 @@
     gap: 1em;
     margin-inline-end: 1rem;
 }
+
+
+
+
+
+/* Hamburger */
+ .btn-toggle-menu {
+    background-color: inherit;
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+ .btn-toggle-menu .hamburger-lines {
+    height: 26px;
+    width: 32px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ .btn-toggle-menu .hamburger-lines .line {
+    height: 4px;
+    width: 100%;
+    background-color: aliceblue;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+
+body.menu-open .btn-toggle-menu .hamburger-lines .line.line1 {
+    rotate: -45deg;
+    transform-origin: top right;
+}
+
+body.menu-open .btn-toggle-menu .hamburger-lines .line.line2 {
+    scale: 0;
+}
+
+body.menu-open .btn-toggle-menu .hamburger-lines .line.line3 {
+    rotate: 45deg;
+    transform-origin: bottom right;
+}
