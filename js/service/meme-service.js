@@ -68,24 +68,22 @@ function getImageById(id) {
 }
 
 
-// create mem
-function addBook(newTitle, newPrice) {
-    var newBook = _createBook(newTitle, newPrice)
-    gBooks.unshift(newBook)
+// create meme
+// function addBook(newTitle, newPrice) {
+//     var newBook = _createBook(newTitle, newPrice)
+//     gBooks.unshift(newBook)
 
+// }
+
+function createMeme(elImg) {
+    const id = +makeId(6)
+    const img = {
+        id,
+        url: elImg.src,
+        keywords: ['new'] 
+    }
+    gImgs.unshift(img)
 }
-
-function createMeme(elImg){
-
-        const id = +makeId(6)
-        const img = {
-          id,
-          url: elImg.src,
-        }
-        gImgs.push(img)
-      
-}
-
 
 
 

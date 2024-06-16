@@ -49,7 +49,9 @@
                 <div class="search-keywords-container"> words,words</div>
                 <div>
                     <button onclick="onGetRandomMeme(), showEditor()">I'm Flexible</button>
-                    <button>Uplaod Img</button>
+                    <button onclick="onNewImg()">Upload Img</button>
+                    <input type="file" class="imgUpload" style="display: none;"
+                        onchange="loadImage(event)">
                 </div>
             </section>
 
