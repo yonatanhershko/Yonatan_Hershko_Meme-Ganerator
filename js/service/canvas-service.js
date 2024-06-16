@@ -5,8 +5,6 @@ const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
 function addListeners() {
     addMouseListeners()
     removeMouseListeners()
-    // addTouchListeners()
-    // removeTouchListeners()
 
     window.addEventListener('resize', () => {
         renderMeme()
@@ -18,7 +16,6 @@ function addMouseListeners() {
     gElCanvas.addEventListener('mousemove', onMove)
     gElCanvas.addEventListener('mouseup', onUp)
 }
-
 
 function removeMouseListeners() {
     gElCanvas.removeEventListener('mousedown', onDown)

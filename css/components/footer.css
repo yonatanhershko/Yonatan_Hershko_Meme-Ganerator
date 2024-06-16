@@ -1,5 +1,4 @@
 
-
 .footer-container{
     width: 100%;
     margin-block-start: 4em;
@@ -23,7 +22,6 @@
     color: var(--footr-btn-clr);
     transition: color 0.3s ease, transform 0.3s ease;
 }
-
 
 .fa-linkedin:hover {
     transform: scale(1.2);

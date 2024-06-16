@@ -71,3 +71,16 @@ function renderSavedMemes(container) {
         container.innerHTML += memeHtml
     })
 }
+
+function onSelectSavedMeme(index) {
+    gCurrentMemeIndex = index
+    const memeDataUrl = gSavedMemes[index]
+
+    const img = new Image()
+    img.src = memeDataUrl
+    img.onload = () => {
+        gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+        showEditor() 
+    }
+}

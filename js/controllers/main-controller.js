@@ -1,26 +1,36 @@
 'use strict'
 
+const MEME_STORAGE = 'savedMemes'
+var gElCanvas
+var gCtx
+var gSavedMemes = []
+let gIsDragging = false
+let gDragStartX, gDragStartY
+let gCurrentMemeIndex = null
+var gFilteredMemes
+
+
 let galleryContainerDis = document.querySelector('.gallery-container')
 let canvasContainerDis = document.querySelector('.editor-container')
 let topGallerySearchDis = document.querySelector('.top-gallery-search')
 let footerDis = document.querySelector('.footer-container')
 let aboutMeDis = document.querySelector('.aboutme-container')
-let saveMemeDis =  document.querySelector('.saved-meme-container')
+let saveMemeDis = document.querySelector('.saved-meme-container')
 
 
 function onInit() {
     gElCanvas = document.getElementById('myCanvas')
     gCtx = gElCanvas.getContext('2d')
     gElCanvas.addEventListener('click', onMouseClick)
-    
+
     renderMeme()
     renderGallery()
     addListeners()
 
-    const savedMemesFromStorage = getFromStorage(MEME_STORAGE);
-    gSavedMemes = savedMemesFromStorage || [];
+    const savedMemesFromStorage = getFromStorage(MEME_STORAGE)
+    gSavedMemes = savedMemesFromStorage || []
     onRenderSavedMemes()
-  
+
 
     document.querySelector('.gallery-container').classList.remove('hidden')
     document.querySelector('.editor-container').classList.add('hidden')
@@ -37,7 +47,7 @@ function showEditor() {
     footerDis.classList.add('hidden')
     aboutMeDis.classList.add('hidden')
     saveMemeDis.classList.add('hidden')
-   
+
 
 }
 
@@ -76,14 +86,13 @@ function toggleMenu() {
 
 }
 
-
 function getHTMLGalleryMemes(imges) {
     if (!imges.length) return `<p>No memes found</p>`
     var strHTML = ''
-  
+
     imges.map((img) => {
-      if (img.keywords.length) {
-        strHTML += `
+        if (img.keywords.length) {
+            strHTML += `
         <div 
         class="meme-card pointer">
         <img
@@ -92,8 +101,8 @@ function getHTMLGalleryMemes(imges) {
         class="meme-img" src="${img.url}" />
         </div>
         `
-      }
+        }
     })
-  
+
     return strHTML
-  }
+}

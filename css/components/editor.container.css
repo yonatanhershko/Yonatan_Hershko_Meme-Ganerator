@@ -16,7 +16,6 @@
     margin: 1.5em;
 }
 
-
 .editor-modal-center {
     display: flex;
     width: 21.88em;
@@ -27,10 +26,6 @@
     align-items: center;
 }
 
-/* .text-edit-container img {
-    width: 15px;
-  } */
-
 .meme-text-input {
     margin-inline: 10px;
     padding: 8px 18px;
@@ -38,7 +33,6 @@
     border-radius: 12px;
 
 }
-
 
 #text-color {
     position: absolute;
@@ -105,19 +99,16 @@
     font-size: 28px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
+
 .fa-download:hover {
     transform: scale(1.2);
     color: #744ee6; 
     cursor: pointer;
 }
 
-
-
-
 .editor-modal-center {
     flex-direction: column;
 }
-
 
 .font-family-select {
     width: 50%;
@@ -134,7 +125,49 @@
 
 .font-family-select option {
     background-color: #22252c;
-    /* Background color for options */
     color: #f7feff;
-    /* Text color for options */
+}
+
+
+.success-card {
+    position: fixed;
+    bottom: 20px;
+    right: 60px; 
+    background-color: #58ad55;
+    color: white;
+    padding: 8px 35px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    opacity: 0; 
+    animation: slideInOut 2s ease forwards; 
+    display: none; 
+}
+
+.success-card.show {
+    opacity: 1;
+    display: block;
+}
+
+.hidden-success {
+    display: none; 
+}
+
+@keyframes slideInOut {
+    0% {
+        transform: translateX(100%); 
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(0); 
+        opacity: 1;
+    }
+    90% {
+        transform: translateX(0); 
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%); 
+        opacity: 0;
+    }
 }

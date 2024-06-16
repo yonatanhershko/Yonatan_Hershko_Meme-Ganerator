@@ -7,6 +7,7 @@ function onUploadFacebookImg() {
         window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&t=${url}`)
     }
     doUploadImg(imgDataUrl, onSuccess)
+    
 }
 
 function doUploadImg(imgDataUrl, onSuccess) {

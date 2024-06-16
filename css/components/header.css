@@ -1,3 +1,4 @@
+
 .header-container {
     position: sticky;
     top: 0;
@@ -12,7 +13,6 @@
     z-index: 100;
 
 }
-
 
 .logo {
     font-weight: bold;
@@ -37,9 +37,14 @@
     margin-inline-end: 1rem;
 }
 
+.header-btn {
+    transition: all 0.5s ease;
+}
 
-
-
+.header-btn:hover {
+    color: var(--header-btn-hover-clr);
+    transform:  scale(1.15);
+}
 
 /* Hamburger */
 .btn-toggle-menu {
@@ -66,7 +71,6 @@
     border-radius: 5px;
 }
 
-
 body.menu-open .btn-toggle-menu .hamburger-lines .line.line1 {
     rotate: -45deg;
     transform-origin: top right;
@@ -82,11 +86,3 @@ body.menu-open .btn-toggle-menu .hamburger-lines .line.line3 {
 }
 
 
-.header-btn {
-    transition: all 0.5s ease;
-}
-
-.header-btn:hover {
-    color: var(--header-btn-hover-clr);
-    transform:  scale(1.15);
-}

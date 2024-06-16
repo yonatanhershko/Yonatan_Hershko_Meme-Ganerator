@@ -2,7 +2,6 @@
   display: flex;
 }
 
-
 .flex.space-between {
   justify-content: space-between;
 }
@@ -11,7 +10,6 @@
   align-items: center;
 }
 
-/* list helpers */
 .clean-list {
   margin: 0;
   padding: 0;
@@ -21,7 +19,6 @@
 .hidden {
   display: none;
 }
-
 
 .pointer {
   cursor: pointer;

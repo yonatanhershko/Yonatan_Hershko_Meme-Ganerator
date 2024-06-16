@@ -18,7 +18,7 @@
             <div class="logo pointer" onclick="onShowGallery(), onClearSearch() ">Sunny Memes</div>
             <div class="main-header-area flex ">
                 <a class="pointer header-btn" onclick="onShowGallery() ,onClearSearch()">Gallery</a>
-                <a class="header-btn" onclick=" onShowSavedMemes(),onRenderSavedMemes()">Save Meme</a>
+                <a class="header-btn pointer" onclick=" onShowSavedMemes(),onRenderSavedMemes()">Save Meme</a>
                 <a class="pointer header-btn" onclick="onShowAbout()">About</a>
             </div>
             <button class="btn-toggle-menu" onclick="toggleMenu()">
@@ -29,6 +29,7 @@
                 </div>
             </button>
         </div>
+
         <!-- mobile nav -->
         <nav class="main-header-mobile  ">
             <div class="header-mobile-text flex">
@@ -37,39 +38,39 @@
                 <a class="pointer header-btn" onclick="onShowAbout()">About</a>
             </div>
         </nav>
-
     </header>
 
     <main>
+        <div class="success-card hidden-success " id="successCard" onclick="onShowSuccess()">
+            <p>Success!</p>
+        </div>
+
         <section class="gallery-background">
             <section class="flex top-gallery-search space-between align-center">
                 <div>
-                    <input class="meme-search" type="text" placeholder="Search Here🔍" onkeyup="onFilterBy(this.value)"/>
+                    <input class="meme-search" type="text" placeholder="Search Here🔍"
+                        onkeyup="onFilterBy(this.value)" />
                 </div>
 
-                <div class="search-keywords-container"> 
+                <div class="search-keywords-container">
                     <span class="search-keyword" onclick="onKeywordClick('funny'), onGetBigger(this) ">Funny</span>
                     <span class="search-keyword" onclick="onKeywordClick('weird') , onGetBigger(this) ">Weird</span>
                     <span class="search-keyword" onclick="onKeywordClick('smile') , onGetBigger(this) ">Smile</span>
                     <span class="search-keyword" onclick="onKeywordClick('baby') , onGetBigger(this) ">Baby</span>
                 </div>
 
-
                 <div>
                     <button onclick="onGetRandomMeme(), showEditor()">I'm Flexible</button>
                     <button onclick="onNewImg()">Upload Meme</button>
-                    <input type="file" class="imgUpload" style="display: none;"
-                        onchange="loadImage(event)">
+                    <input type="file" class="imgUpload" style="display: none;" onchange="loadImage(event)">
                 </div>
             </section>
 
             <section class="saved-meme-container flex">
-
             </section>
 
             <section>
                 <div class="gallery-container flex ">
-
                 </div>
             </section>
 
@@ -110,9 +111,7 @@
                         <i class="fa-solid fa-palette color-img pointer editor-btn" onclick="openColorPicker()"></i>
                         <input type="color" id="text-color" name="textColor" value="#252525"
                             onchange="textColor(event)" />
-
                     </div>
-
                 </div>
 
                 <!-- emojy -->
@@ -126,12 +125,10 @@
 
                 <!-- d n s -->
                 <div class=" flex  space-between ">
-
                     <a href="#" onclick="downloadCanvas(this)" download><i
                             class="fa-solid fa-download pointer editor-btn"></i></a>
                     <i class="fa-solid fa-bookmark save" onclick="onSaveMeme()"></i>
                     <a href="#"><i class="fa-brands fa-facebook-f pointer " onclick="onUploadFacebookImg()"></i></a>
-
                 </div>
 
             </div>
@@ -148,7 +145,6 @@
                     Yonatan Hershko. Thank you for your support and interest in my meme generator🦔</p>
             </div>
         </section>
-
     </main>
 
     <footer class="footer-container flex space-between align-center">
@@ -167,6 +163,7 @@
 
         </div>
     </footer>
+
     <script src="./js/service/util-service.js"></script>
     <script src="./js/service/local-storge.js"></script>
     <script src="./js/service/meme-service.js"></script>

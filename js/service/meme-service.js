@@ -3,16 +3,6 @@
 const textLines = ['homework is exciting today',
     'Sprint 2 be like', 'When you start dreaming code', 'When Assie hear\'s about Flex']
 
-
-//LS
-const MEME_STORAGE = 'meme'
-let gSavedMemes = []
-let savedMemeIdx = 0
-var gCurrentMemeIndex = null
-
-
-var gFilteredMemes
-
 const gEmojis = [
     { emojiTxt: '🦛', idx: 0 },
     { emojiTxt: '🦔', idx: 1 },
@@ -61,19 +51,14 @@ var gMeme = {
         },
     ],
 }
-var gKeywordSearchCountMap = { funny: 12, animal: 16, baby: 2 }
 
 function getMeme() {
     return gMeme
 }
 
-
-
-
 function getImageById(id) {
     return gImgs.find(img => img.id === id)
 }
-
 
 function createMeme(elImg) {
     const id = +makeId(6)
@@ -153,10 +138,7 @@ function drawSelectedLineFrame(line) {
 }
 
 
-
-
-
-///icone stuff
+///Icones Options
 
 function openColorPicker() {
     document.getElementById('text-color').click()
@@ -243,8 +225,9 @@ function addEmojiToCanvas(idx) {
 }
 
 
-
 //Save To LS
 function saveMeme() {
-
+    const memeDataUrl = gElCanvas.toDataURL('image/jpeg')
+    gSavedMemes.push(memeDataUrl)
+    saveToStorage(MEME_STORAGE, gSavedMemes)
 }

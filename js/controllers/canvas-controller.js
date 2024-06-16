@@ -1,19 +1,16 @@
 
 'use strict'
-var gElCanvas
-var gCtx
-let gIsDragging = false
-let gDragStartX, gDragStartY
 
 function downloadCanvas(elLink) {
     renderMeme()
     const dataUrl = gElCanvas.toDataURL()
     elLink.href = dataUrl
     elLink.download = 'my-img'
-  }
+    onShowSuccess()
+}
 
 function onDown(ev) {
-    ev.preventDefault() 
+    ev.preventDefault()
 
     const { offsetX, offsetY } = ev
     const meme = getMeme()
@@ -40,7 +37,7 @@ function onMove(ev) {
 
         selectedLine.x = offsetX - gDragStartX
         selectedLine.y = offsetY - gDragStartY
-        renderMeme() 
+        renderMeme()
     }
 }
 

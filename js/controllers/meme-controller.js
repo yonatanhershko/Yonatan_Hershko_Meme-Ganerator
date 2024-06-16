@@ -196,28 +196,24 @@ function onGetRandomMeme() {
     gMeme.selectedImgId = randomImg.id
     gMeme.img = randomImg.url
     gMeme.lines[0].txt = randomTextLine
-
+    updateTextInput()
     renderMeme()
 }
 
 //Save To LS 
 function onSaveMeme() {
-    const memeDataUrl = gElCanvas.toDataURL('image/jpeg')
-    gSavedMemes.push(memeDataUrl)
-    saveToStorage(MEME_STORAGE, gSavedMemes)
-    alert('Meme saved successfully!')
+    saveMeme()
+    onShowSuccess()
 }
 
 
-function onSelectSavedMeme(index) {
-    gCurrentMemeIndex = index;
-    const memeDataUrl = gSavedMemes[index];
+function onShowSuccess() {
+    const successCard = document.getElementById('successCard')
+    successCard.classList.remove('hidden')
+    successCard.classList.add('show')
 
-    const img = new Image();
-    img.src = memeDataUrl;
-    img.onload = () => {
-        gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height);
-        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-        showEditor(); // Switch to the editor view
-    };
+    setTimeout(() => {
+        successCard.classList.remove('show')
+        successCard.classList.add('hidden')
+    }, 2000)
 }

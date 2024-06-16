@@ -1,5 +1,4 @@
 
-
 .aboutme {
     display: flex;
     justify-content: center;
@@ -17,8 +16,6 @@
     text-align: center; 
     border-radius: 25px;
     margin-block-start: 2em;
-
-
 }
 
 .aboutme h2 {

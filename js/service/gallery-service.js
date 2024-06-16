@@ -14,7 +14,6 @@ function loadImage(event) {
     reader.readAsDataURL(file)
 }
 
-
 function getCurrMemes(search) {
     gFilteredMemes = [...gImgs]
 
