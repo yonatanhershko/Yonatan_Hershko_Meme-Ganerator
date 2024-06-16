@@ -2,7 +2,6 @@
 'use strict'
 
 
-
 function renderGallery(imgs = gImgs) {
     var elGalleryContainer = document.querySelector('.gallery-container')
     const strHTMLs = imgs.map((img) => {
@@ -15,13 +14,12 @@ function onNewImg() {
     document.querySelector('.imgUpload').click()
 }
 
-
 function onFilterBy(searchTerm) {
     const filteredMemes = getCurrMemes(searchTerm)
     const elGalleryContainer = document.querySelector('.gallery-container')
 
     if (filteredMemes.length === 0) {
-        elGalleryContainer.innerHTML = '<pclass="not-found">No memes found Try different keywords😶‍🌫️</p>'
+        elGalleryContainer.innerHTML = '<p class="not-found">No memes found Try different keywords😶‍🌫️</p>'
     } else {
         renderGallery(filteredMemes)
     }
@@ -47,4 +45,29 @@ function onClearSearch(keyword) {
     elInput.value = ''
     const elClearInput = getCurrMemes(keyword)
     renderGallery(elClearInput)
+}
+
+
+//Saved Meme 
+
+function onRenderSavedMemes() {
+    const savedMemesContainer = document.querySelector('.saved-meme-container')
+    savedMemesContainer.innerHTML = ''
+
+    if (gSavedMemes.length === 0) {
+        savedMemesContainer.innerHTML = '<p class="not-found not-saved-text"> No saved memes yet!</p>'
+    } else {
+        renderSavedMemes(savedMemesContainer)
+    }
+}
+
+function renderSavedMemes(container) {
+    gSavedMemes.forEach((memeDataUrl, index) => {
+        const memeHtml = `
+            <div class="saved-meme">
+                <img src="${memeDataUrl}" alt="Saved Meme ${index + 1}" class="card" data-index="${index}" onclick="onSelectSavedMeme(${index})">
+            </div>
+        `
+        container.innerHTML += memeHtml
+    })
 }

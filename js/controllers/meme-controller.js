@@ -200,4 +200,24 @@ function onGetRandomMeme() {
     renderMeme()
 }
 
+//Save To LS 
+function onSaveMeme() {
+    const memeDataUrl = gElCanvas.toDataURL('image/jpeg')
+    gSavedMemes.push(memeDataUrl)
+    saveToStorage(MEME_STORAGE, gSavedMemes)
+    alert('Meme saved successfully!')
+}
 
+
+function onSelectSavedMeme(index) {
+    gCurrentMemeIndex = index;
+    const memeDataUrl = gSavedMemes[index];
+
+    const img = new Image();
+    img.src = memeDataUrl;
+    img.onload = () => {
+        gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height);
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
+        showEditor(); // Switch to the editor view
+    };
+}

@@ -18,7 +18,7 @@
             <div class="logo pointer" onclick="onShowGallery(), onClearSearch() ">Sunny Memes</div>
             <div class="main-header-area flex ">
                 <a class="pointer header-btn" onclick="onShowGallery() ,onClearSearch()">Gallery</a>
-                <a class="header-btn" onclick=" onShowSavedMemes()">Save Meme</a>
+                <a class="header-btn" onclick=" onShowSavedMemes(),onRenderSavedMemes()">Save Meme</a>
                 <a class="pointer header-btn" onclick="onShowAbout()">About</a>
             </div>
             <button class="btn-toggle-menu" onclick="toggleMenu()">
@@ -33,7 +33,7 @@
         <nav class="main-header-mobile  ">
             <div class="header-mobile-text flex">
                 <a class="pointer header-btn" onclick="onShowGallery()">Gallery</a>
-                <a>Save Meme</a>
+                <a class="header-btn pointer" onclick=" onShowSavedMemes(),onRenderSavedMemes()">Save Meme</a>
                 <a class="pointer header-btn" onclick="onShowAbout()">About</a>
             </div>
         </nav>
@@ -63,7 +63,7 @@
                 </div>
             </section>
 
-            <section class=" saved-meme-container  flex">
+            <section class="saved-meme-container flex">
 
             </section>
 
@@ -129,7 +129,7 @@
 
                     <a href="#" onclick="downloadCanvas(this)" download><i
                             class="fa-solid fa-download pointer editor-btn"></i></a>
-                    <i class="fa-solid fa-bookmark save"></i>
+                    <i class="fa-solid fa-bookmark save" onclick="onSaveMeme()"></i>
                     <a href="#"><i class="fa-brands fa-facebook-f pointer " onclick="onUploadFacebookImg()"></i></a>
 
                 </div>

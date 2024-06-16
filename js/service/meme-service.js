@@ -4,10 +4,13 @@ const textLines = ['homework is exciting today',
     'Sprint 2 be like', 'When you start dreaming code', 'When Assie hear\'s about Flex']
 
 
-    //LS
-const MEME_STORGE = 'meme'
-var gSaveMeme =[]
-var savedMemeIdx
+//LS
+const MEME_STORAGE = 'meme'
+let gSavedMemes = []
+let savedMemeIdx = 0
+var gCurrentMemeIndex = null
+
+
 var gFilteredMemes
 
 const gEmojis = [
@@ -16,11 +19,11 @@ const gEmojis = [
     { emojiTxt: '☠️', idx: 2 },
     { emojiTxt: '⭐', idx: 3 },
     { emojiTxt: '👓', idx: 4 },
-  ]
+]
 
-  function getImojis() {
+function getImojis() {
     return gEmojis
-  }
+}
 
 var gImgs = [
     { id: 1, url: './meme-imgs/1.jpg', keywords: ['funny', 'man', 'mad'] },
@@ -77,7 +80,7 @@ function createMeme(elImg) {
     const img = {
         id,
         url: elImg.src,
-        keywords: ['new'] 
+        keywords: ['new']
     }
     gImgs.unshift(img)
 }
@@ -233,15 +236,15 @@ function addEmojiToCanvas(idx) {
         font: 'Impact, Haettenschweiler, Arial Narrow Bold, sans-serif',
         color: '#252525',
         x: gElCanvas.width / 2,
-        y: gElCanvas.height / 2, 
+        y: gElCanvas.height / 2,
     }
-    gMeme.lines.push(newLine) 
-    renderMeme() 
+    gMeme.lines.push(newLine)
+    renderMeme()
 }
 
 
 
+//Save To LS
+function saveMeme() {
 
-
-
-// filter
+}

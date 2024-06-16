@@ -58,12 +58,18 @@
     height: 400px;
 }
 
-
     .top-gallery-search > div:nth-child(3) {
         display:  flex;
        flex-direction: column;
        gap: 0;
     }
+
+    
+    /* in computre look bed but in mobile its perfect */
+.not-saved-text{
+    height: 46vh;
+}
+
 }
 
 

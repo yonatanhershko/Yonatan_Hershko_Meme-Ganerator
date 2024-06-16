@@ -12,7 +12,6 @@ function downloadCanvas(elLink) {
     elLink.download = 'my-img'
   }
 
-
 function onDown(ev) {
     ev.preventDefault() 
 
@@ -49,10 +48,3 @@ function onUp() {
     gIsDragging = false
 }
 
-
-///Img resize
-// function resizeCanvas() {
-//     const elContainer = document.querySelector('.canvas-container')
-//     gElCanvas.width = elContainer.clientWidth
-//     renderMeme()
-//   }

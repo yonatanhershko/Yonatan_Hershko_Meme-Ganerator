@@ -12,11 +12,15 @@ function onInit() {
     gElCanvas = document.getElementById('myCanvas')
     gCtx = gElCanvas.getContext('2d')
     gElCanvas.addEventListener('click', onMouseClick)
+    
     renderMeme()
     renderGallery()
     addListeners()
-    // onRenderSavedGallery()
-    // resizeCanvas()
+
+    const savedMemesFromStorage = getFromStorage(MEME_STORAGE);
+    gSavedMemes = savedMemesFromStorage || [];
+    onRenderSavedMemes()
+  
 
     document.querySelector('.gallery-container').classList.remove('hidden')
     document.querySelector('.editor-container').classList.add('hidden')
@@ -65,7 +69,6 @@ function onShowSavedMemes() {
     galleryContainerDis.classList.add('hidden')
     canvasContainerDis.classList.add('hidden')
     topGallerySearchDis.classList.add('hidden')
-    saveMemeDis.classList.add('hidden')
 }
 
 function toggleMenu() {
