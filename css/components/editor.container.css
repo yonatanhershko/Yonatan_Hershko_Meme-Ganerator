@@ -19,10 +19,10 @@
 
 .editor-modal-center {
     display: flex;
-    width: 350px;
+    width: 21.88em;
     background-color: var(--editor-centermodal-clr);
     border-radius: 25px;
-    height: 125px;
+    height: 7.81em;
     justify-content: center;
     align-items: center;
 }

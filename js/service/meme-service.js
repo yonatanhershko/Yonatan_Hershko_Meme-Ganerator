@@ -67,6 +67,30 @@ function getImageById(id) {
     return gImgs.find(img => img.id === id)
 }
 
+
+// create mem
+function addBook(newTitle, newPrice) {
+    var newBook = _createBook(newTitle, newPrice)
+    gBooks.unshift(newBook)
+
+}
+
+function createMeme(elImg){
+
+        const id = +makeId(6)
+        const img = {
+          id,
+          url: elImg.src,
+        }
+        gImgs.push(img)
+      
+}
+
+
+
+
+
+//Lines
 function addLine() {
     const newLine = {
         txt: 'But never pickles',
@@ -206,7 +230,6 @@ function downLine() {
     renderMeme()
 }
 
-
 function addEmojiToCanvas(idx) {
     const emoji = gEmojis.find(emoji => emoji.idx === idx)
     if (!emoji) return
@@ -226,32 +249,6 @@ function addEmojiToCanvas(idx) {
 
 
 
-function getKeywords() {
-    const words = getBestKeywords()
-    const maxSize = window.innerWidth < 500 ? 17 : 23
-    var strHTML = ''
-    words.map((word) => {
-      strHTML += `
-      <p 
-      style="font-size: ${
-        10 + word.usage > maxSize ? maxSize : 10 + word.usage
-      }px"
-      onclick="onSetFilter('${word.keyword}')"
-      class="pointer keyword"
-      >
-      ${word.keyword}
-      </p>
-      `
-    })
-  
-    return strHTML
-  }
 
-  function getBestKeywords() {
-    const entries = Object.entries(gKeywordSearchCountMap)
-    return entries.map((entry) => ({
-      keyword: entry[0],
-      usage: entry[1],
-    }))
-  }
-  
+
+// filter

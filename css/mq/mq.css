@@ -42,13 +42,22 @@
 
     }
 
-.editor-container{
+/* .editor-container{
     flex-direction: column-reverse;
-}
+} */
+ 
+
 .options {
     height: 300px;}
 
     
+    .top-gallery-search > div:nth-child(3) {
+        display:  flex;
+       flex-direction: column;
+       gap: 0;
+    }
+
+
  
 }
 
