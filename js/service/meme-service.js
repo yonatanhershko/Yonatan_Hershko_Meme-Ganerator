@@ -4,9 +4,11 @@ const textLines = ['homework is exciting today',
     'Sprint 2 be like', 'When you start dreaming code', 'When Assie hear\'s about Flex']
 
 
+    //LS
 const MEME_STORGE = 'meme'
 var gSaveMeme =[]
 var savedMemeIdx
+var gFilteredMemes
 
 const gEmojis = [
     { emojiTxt: '🦛', idx: 0 },
@@ -56,24 +58,33 @@ var gMeme = {
         },
     ],
 }
-
 var gKeywordSearchCountMap = { funny: 12, animal: 16, baby: 2 }
 
 function getMeme() {
     return gMeme
 }
 
+
+function getCurrMemes(search) {
+    gFilteredMemes = [...gImgs]
+
+    
+    if (!search || search === undefined) {
+       
+        return gFilteredMemes 
+    }
+    const searchTerm = search.toLowerCase()
+    gFilteredMemes = gImgs.filter(img => {
+        return img.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm))
+    })
+    return gFilteredMemes
+}
+
+
 function getImageById(id) {
     return gImgs.find(img => img.id === id)
 }
 
-
-// create meme
-// function addBook(newTitle, newPrice) {
-//     var newBook = _createBook(newTitle, newPrice)
-//     gBooks.unshift(newBook)
-
-// }
 
 function createMeme(elImg) {
     const id = +makeId(6)
@@ -84,8 +95,6 @@ function createMeme(elImg) {
     }
     gImgs.unshift(img)
 }
-
-
 
 
 //Lines

@@ -16,6 +16,7 @@ function onInit() {
     renderGallery()
     addListeners()
     // onRenderSavedGallery()
+    // resizeCanvas()
 
     document.querySelector('.gallery-container').classList.remove('hidden')
     document.querySelector('.editor-container').classList.add('hidden')
@@ -23,7 +24,6 @@ function onInit() {
     document.querySelector('.saved-meme-container').classList.add('hidden')
     updateTextInput()
 }
-
 
 function showEditor() {
     canvasContainerDis.classList.remove('hidden')
@@ -36,7 +36,6 @@ function showEditor() {
    
 
 }
-
 
 function onShowGallery() {
     galleryContainerDis.classList.remove('hidden')
@@ -73,3 +72,25 @@ function toggleMenu() {
     document.body.classList.toggle("menu-open")
 
 }
+
+
+function getHTMLGalleryMemes(imges) {
+    if (!imges.length) return `<p>No memes found</p>`
+    var strHTML = ''
+  
+    imges.map((img) => {
+      if (img.keywords.length) {
+        strHTML += `
+        <div 
+        class="meme-card pointer">
+        <img
+        onclick="onOpenEditor(false, this)"
+        data-img-id="${img.id}"
+        class="meme-img" src="${img.url}" />
+        </div>
+        `
+      }
+    })
+  
+    return strHTML
+  }

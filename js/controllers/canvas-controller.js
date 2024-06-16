@@ -10,7 +10,6 @@ function downloadCanvas(elLink) {
     const dataUrl = gElCanvas.toDataURL()
     elLink.href = dataUrl
     elLink.download = 'my-img'
-    showUserModal('Meme downloaded!')
   }
 
 
@@ -35,7 +34,6 @@ function onDown(ev) {
 
 function onMove(ev) {
     ev.preventDefault()
-
     if (gIsDragging) {
         const { offsetX, offsetY } = ev
         const meme = getMeme()
@@ -47,7 +45,14 @@ function onMove(ev) {
     }
 }
 
-
 function onUp() {
     gIsDragging = false
 }
+
+
+///Img resize
+// function resizeCanvas() {
+//     const elContainer = document.querySelector('.canvas-container')
+//     gElCanvas.width = elContainer.clientWidth
+//     renderMeme()
+//   }

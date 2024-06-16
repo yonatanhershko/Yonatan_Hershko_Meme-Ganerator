@@ -44,9 +44,12 @@
         <section class="gallery-background">
             <section class="flex top-gallery-search space-between align-center">
                 <div>
-                    <input class="meme-search" type="text" placeholder="Search Here" />
+                    <input class="meme-search" type="text" placeholder="Search Here" onkeyup="onFilterBy(this.value)"/>
                 </div>
+
                 <div class="search-keywords-container"> words,words</div>
+
+                
                 <div>
                     <button onclick="onGetRandomMeme(), showEditor()">I'm Flexible</button>
                     <button onclick="onNewImg()">Upload Img</button>
