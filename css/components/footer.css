@@ -1,14 +1,9 @@
 
 
 .footer-container{
-    /* position: fixed;
-    left: 0;
-    bottom: 0; */
     width: 100%;
     margin-block-start: 4em;
-    /* padding: 0.15em; */
     background: var(--header-bg-clr);
-  
 }
 
 .footer-container p {

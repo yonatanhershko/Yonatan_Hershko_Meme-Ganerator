@@ -11,7 +11,6 @@
   /* for my self-> change the bgc clr and the text clr */
   body {
       height: 100%;
-    
     color: var(--btn-clr);
     margin: 0;
     padding: 0;

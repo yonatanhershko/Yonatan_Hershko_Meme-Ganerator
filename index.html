@@ -15,9 +15,9 @@
     <header>
         <div class="main-screen" onclick="toggleMenu()"></div>
         <div class="header-container flex space-between align-center ">
-            <div class="logo pointer" onclick="onShowGallery()">Sunny Memes</div>
+            <div class="logo pointer" onclick="onShowGallery(), onClearSearch() ">Sunny Memes</div>
             <div class="main-header-area flex ">
-                <a class="pointer header-btn" onclick="onShowGallery()">Gallery</a>
+                <a class="pointer header-btn" onclick="onShowGallery() ,onClearSearch()">Gallery</a>
                 <a class="header-btn" onclick=" onShowSavedMemes()">Save Meme</a>
                 <a class="pointer header-btn" onclick="onShowAbout()">About</a>
             </div>
@@ -44,15 +44,20 @@
         <section class="gallery-background">
             <section class="flex top-gallery-search space-between align-center">
                 <div>
-                    <input class="meme-search" type="text" placeholder="Search Here" onkeyup="onFilterBy(this.value)"/>
+                    <input class="meme-search" type="text" placeholder="Search Here🔍" onkeyup="onFilterBy(this.value)"/>
                 </div>
 
-                <div class="search-keywords-container"> words,words</div>
+                <div class="search-keywords-container"> 
+                    <span class="search-keyword" onclick="onKeywordClick('funny'), onGetBigger(this) ">Funny</span>
+                    <span class="search-keyword" onclick="onKeywordClick('man') , onGetBigger(this) ">Man</span>
+                    <span class="search-keyword" onclick="onKeywordClick('weird') , onGetBigger(this) ">Weird</span>
+                    <span class="search-keyword" onclick="onKeywordClick('smile') , onGetBigger(this) ">Smile</span>
+                </div>
 
-                
+
                 <div>
                     <button onclick="onGetRandomMeme(), showEditor()">I'm Flexible</button>
-                    <button onclick="onNewImg()">Upload Img</button>
+                    <button onclick="onNewImg()">Upload Meme</button>
                     <input type="file" class="imgUpload" style="display: none;"
                         onchange="loadImage(event)">
                 </div>
@@ -165,12 +170,13 @@
     <script src="./js/service/util-service.js"></script>
     <script src="./js/service/local-storge.js"></script>
     <script src="./js/service/meme-service.js"></script>
+    <script src="./js/service/gallery-service.js"></script>
     <script src="./js/service/sharing-facebook.js"></script>
-    <script src="./js/service/canvas.service.js"></script>
+    <script src="./js/service/canvas-service.js"></script>
     <script src="./js/controllers/meme-controller.js"></script>
     <script src="./js/controllers/canvas-controller.js"></script>
     <script src="./js/controllers/main-controller.js"></script>
-    <script src="./js/controllers/galleryController.js"></script>
+    <script src="./js/controllers/gallery-controller.js"></script>
 
 </body>
 

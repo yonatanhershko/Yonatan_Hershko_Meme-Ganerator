@@ -65,20 +65,6 @@ function getMeme() {
 }
 
 
-function getCurrMemes(search) {
-    gFilteredMemes = [...gImgs]
-
-    
-    if (!search || search === undefined) {
-       
-        return gFilteredMemes 
-    }
-    const searchTerm = search.toLowerCase()
-    gFilteredMemes = gImgs.filter(img => {
-        return img.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm))
-    })
-    return gFilteredMemes
-}
 
 
 function getImageById(id) {

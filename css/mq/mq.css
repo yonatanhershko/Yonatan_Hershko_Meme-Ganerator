@@ -41,6 +41,17 @@
 
 
     }
+    .not-found{
+        height: 24vh;
+        font-size: 1.2em;
+    }
+    
+    .footer-container{
+        width: 100%;
+       
+        margin-block-start: 4em;
+        background: var(--header-bg-clr);
+    }
 
 /* .editor-container{
     flex-direction: column-reverse;

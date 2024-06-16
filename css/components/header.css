@@ -1,7 +1,7 @@
 .header-container {
     position: sticky;
     top: 0;
-    margin-block-end: 1.2em;
+    margin-block-end: 2em;
     padding: 0.8em;
     background: var(--header-bg-clr);
     /* padding-bottom: 10px; */
