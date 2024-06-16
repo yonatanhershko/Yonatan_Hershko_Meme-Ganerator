@@ -17,11 +17,32 @@
 
 .footer-btn{
     display: flex;
-    padding: 0.4em;
+    /* padding: 0.4em; */
     margin-inline-end: 1rem;
+    text-decoration: none;
+    font-size: 36px;
+}
+
+.fa-linkedin,.fa-square-github,.fa-square-instagram{
+
+    color: var(--footr-btn-clr);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.fa-linkedin:hover {
+    transform: scale(1.2);
+    color: #1161b6
 
 }
 
-.footer-btn img{
-    width: 38px;
+.fa-square-instagram:hover {
+    transform: scale(1.2);
+    color: #a15be6;
+
+}
+
+.fa-square-github:hover{
+    transform: scale(1.2);
+    color: #000000;
 }

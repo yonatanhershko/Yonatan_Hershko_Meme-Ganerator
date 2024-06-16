@@ -74,7 +74,6 @@
 
 
 .fa-facebook-f {
-    transition: color 0.5s ease;
     color: var(--btn-clr);
     padding: 10px;
     font-size: 28px;
@@ -88,7 +87,6 @@
 }
 
 .fa-bookmark {
-    transition: color 0.5s ease;
     color: var(--btn-clr);
     padding: 10px;
     font-size: 28px;
@@ -102,7 +100,6 @@
 }
 
 .fa-download {
-    transition: color 0.5s ease;
     color: var(--btn-clr);
     padding: 10px;
     font-size: 28px;
