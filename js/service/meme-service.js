@@ -108,17 +108,18 @@ function updateTextInput() {
         const selectedLine = gMeme.lines[selectedLineIdx]
         inputField.value = selectedLine.txt
         inputColor.value = selectedLine.color
-        updatePaletteIconColor(selectedLine.color) // Update palette icon color when updating the input
+        updatePaletteIconColor(selectedLine.color) 
     } else {
         inputField.value = ''
-        inputColor.value = '#000000' // default color or any other color you prefer
-        updatePaletteIconColor('#000000') // Update palette icon color to default
+        inputColor.value = '#000000' 
+        updatePaletteIconColor('#000000') 
     }
 }
 
 function getSelectedLine() {
     return gMeme.lines[gMeme.selectedLineIdx]
 }
+
 function getLineIdx(line) {
     return gMeme.lines.findIndex((currLine) => currLine === line)
 }

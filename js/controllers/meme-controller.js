@@ -35,6 +35,7 @@ function renderMeme() {
             if (line.strokeWidth > 0) {
                 gCtx.strokeText(line.txt, line.x, line.y)
             }
+            
             gCtx.fillText(line.txt, line.x, line.y)
 
             if (idx === meme.selectedLineIdx) {
