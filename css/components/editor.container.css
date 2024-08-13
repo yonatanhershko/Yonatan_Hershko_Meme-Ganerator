@@ -8,22 +8,23 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
     height: 400px;
     width: 400px;
     background-color: var(--editor-modal-bg-clr);
     border-radius: 25px;
-    /* row-gap: 5px; */
     margin: 1.5em;
 }
 
 .editor-modal-center {
     display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 21.88em;
     background-color: var(--editor-centermodal-clr);
     border-radius: 25px;
     height: 7.81em;
-    justify-content: center;
-    align-items: center;
 }
 
 .meme-text-input {
@@ -48,12 +49,12 @@
 
 #text-color:focus,
 #text-color:hover {
+    left: 0; 
     width: 40px; 
     height: 40px; 
     clip: auto;
     overflow: visible;
     z-index: 10;
-    left: 0; 
 }
 
 .color-picker-label {

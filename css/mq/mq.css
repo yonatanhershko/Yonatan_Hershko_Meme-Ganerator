@@ -33,14 +33,12 @@
     }
 
     .header-mobile-text {
-        margin-block-start: 86px;
         display: flex;
         flex-direction: column;
-        row-gap: 20px;
         align-items: center;
+        margin-block-start: 86px;
+        row-gap: 20px;
         font-size: 1.3em;
-
-
     }
 
     .not-found {
@@ -57,6 +55,8 @@
 
     .options {
         height: 400px;
+        margin: 0;
+        margin: 2em 0;
     }
 
     .top-gallery-search>div:nth-child(3) {

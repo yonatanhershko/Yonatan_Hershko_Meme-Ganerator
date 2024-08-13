@@ -1,8 +1,5 @@
-
 .top-gallery-search {
-
   flex-direction: column;
-
   gap: 10px;
 }
 
@@ -30,16 +27,16 @@
 }
 
 .meme-search {
-    padding: 10px 15px;
-    font-size: 1em;
-    font-weight: bold;
-    background-color: transparent;
-    text-align: center;
-    color: var(--btn-clr);
-    border: none; 
-    border-radius: 10px;
-    box-shadow: 0 0 0 1px var(--btn-clr); 
-  
+  padding: 10px 15px;
+  font-size: 1em;
+  font-weight: bold;
+  background-color: transparent;
+  text-align: center;
+  color: var(--btn-clr);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px var(--btn-clr);
+
 }
 
 .search-keywords-container {
@@ -52,14 +49,13 @@
 .search-keywords-container span {
   display: flex;
   align-items: center;
-  margin-inline: 5px;
   justify-self: center;
+  margin-inline: 5px;
   transition: all 0.2s;
   cursor: pointer;
   font-size: 22px;
 }
 
-.search-keywords-container span:hover{
+.search-keywords-container span:hover {
   color: rgb(222, 230, 236);
 }
-

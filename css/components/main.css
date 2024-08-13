@@ -1,7 +1,7 @@
 .gallery-container {
     flex-wrap: wrap;
-    gap: 10px;
     justify-content: center;
+    gap: 10px;
 }
 
 .card{
@@ -27,8 +27,8 @@
 
 .saved-meme-container{
     flex-wrap: wrap;
-    gap: 10px;
     justify-content: center;
+    gap: 10px;
     height: 100vh;
 
    
